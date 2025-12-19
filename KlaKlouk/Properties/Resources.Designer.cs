@@ -133,6 +133,16 @@ namespace KlaKlouk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cover {
+            get {
+                object obj = ResourceManager.GetObject("Cover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gaming0_generated {
             get {
                 object obj = ResourceManager.GetObject("Gaming0_generated", resourceCulture);
@@ -146,6 +156,26 @@ namespace KlaKlouk.Properties {
         internal static System.Drawing.Bitmap Gemini_Generated_Image_vgadrpvgadrpvgad_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_vgadrpvgadrpvgad-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Plate {
+            get {
+                object obj = ResourceManager.GetObject("Plate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap platee {
+            get {
+                object obj = ResourceManager.GetObject("platee", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

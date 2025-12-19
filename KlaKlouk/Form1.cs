@@ -26,6 +26,22 @@ namespace KlaKlouk
         {
             lbWelcome.Parent = backGround;
             lbWelcome.BackColor = Color.Transparent;
+
+            lbUserName.Parent = backGround;
+            lbUserName.BackColor = Color.Transparent;
+
+            lbTotal.Parent = backGround;
+            lbTotal.BackColor = Color.Transparent;
+
+            lbLastRoll.Parent = backGround;
+            lbLastRoll.BackColor = Color.Transparent;
+
+            coverPlate.Parent = backGround;
+            coverPlate.BackColor = Color.Transparent;
+
+            plate.Parent = backGround;
+            plate.BackColor = Color.Transparent;
+           
         }
     }
 }
