@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.borderBoard = new System.Windows.Forms.Panel();
             this.board = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -40,8 +41,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.backGround = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -65,6 +68,7 @@
             // board
             // 
             this.board.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(44)))));
+            this.board.Controls.Add(this.pictureBox8);
             this.board.Controls.Add(this.pictureBox7);
             this.board.Controls.Add(this.pictureBox6);
             this.board.Controls.Add(this.pictureBox5);
@@ -79,12 +83,23 @@
             this.board.Size = new System.Drawing.Size(566, 256);
             this.board.TabIndex = 0;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::KlaKlouk.Properties.Resources._495380540_1234634998667322_7231814058636201929_n_removebg_preview;
+            this.pictureBox8.Location = new System.Drawing.Point(395, 149);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(163, 120);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 7;
+            this.pictureBox8.TabStop = false;
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = global::KlaKlouk.Properties.Resources.Gemini_Generated_Image_vgadrpvgadrpvgad_removebg_preview;
-            this.pictureBox7.Location = new System.Drawing.Point(395, 8);
+            this.pictureBox7.Location = new System.Drawing.Point(407, 10);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(163, 154);
+            this.pictureBox7.Size = new System.Drawing.Size(132, 118);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 6;
             this.pictureBox7.TabStop = false;
@@ -173,11 +188,22 @@
             this.backGround.TabIndex = 0;
             this.backGround.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(463, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 529);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbWelcome);
             this.Controls.Add(this.borderBoard);
             this.Controls.Add(this.backGround);
@@ -187,6 +213,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.borderBoard.ResumeLayout(false);
             this.board.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -213,6 +240,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lbWelcome;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Button button1;
     }
 }
 

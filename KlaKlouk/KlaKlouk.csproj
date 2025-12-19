@@ -105,5 +105,8 @@
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_vgadrpvgadrpvgad-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\495380540_1234634998667322_7231814058636201929_n-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

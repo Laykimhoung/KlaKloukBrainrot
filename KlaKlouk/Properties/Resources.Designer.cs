@@ -93,6 +93,16 @@ namespace KlaKlouk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _495380540_1234634998667322_7231814058636201929_n_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("495380540_1234634998667322_7231814058636201929_n-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5 {
             get {
                 object obj = ResourceManager.GetObject("5", resourceCulture);
