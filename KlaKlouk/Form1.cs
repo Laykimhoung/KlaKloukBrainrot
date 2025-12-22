@@ -11,6 +11,16 @@ using System.Windows.Forms;
 
 namespace KlaKlouk
 {
+    enum KlaKloukFaces
+    {
+        BrrBrrPatapim,
+        TungTungTungSahur,
+        BombardiroCrocodilo,
+        ChimpanziniBananini,
+        CappuccinoAssassino,
+        TralaleroTralala
+    }
+
     public partial class Form1 : Form
     {
         FormResizer resizer = new FormResizer();
