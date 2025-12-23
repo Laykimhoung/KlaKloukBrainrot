@@ -133,6 +133,56 @@ namespace KlaKlouk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BombardiroCrocodilo {
+            get {
+                object obj = ResourceManager.GetObject("BombardiroCrocodilo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BrrBrrPatapim {
+            get {
+                object obj = ResourceManager.GetObject("BrrBrrPatapim", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BrrBrrPatapim1 {
+            get {
+                object obj = ResourceManager.GetObject("BrrBrrPatapim1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CappuccinoAssassino {
+            get {
+                object obj = ResourceManager.GetObject("CappuccinoAssassino", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ChimpanziniBananini {
+            get {
+                object obj = ResourceManager.GetObject("ChimpanziniBananini", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cover {
             get {
                 object obj = ResourceManager.GetObject("Cover", resourceCulture);
@@ -176,6 +226,26 @@ namespace KlaKlouk.Properties {
         internal static System.Drawing.Bitmap platee {
             get {
                 object obj = ResourceManager.GetObject("platee", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TralaleroTralala {
+            get {
+                object obj = ResourceManager.GetObject("TralaleroTralala", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TungTungTungSahur {
+            get {
+                object obj = ResourceManager.GetObject("TungTungTungSahur", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

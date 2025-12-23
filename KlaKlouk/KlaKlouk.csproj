@@ -117,5 +117,23 @@
   <ItemGroup>
     <None Include="Resources\platee.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrrBrrPatapim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TungTungTungSahur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BombardiroCrocodilo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChimpanziniBananini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CappuccinoAssassino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TralaleroTralala.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

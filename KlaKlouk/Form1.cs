@@ -24,10 +24,11 @@ namespace KlaKlouk
     public partial class Form1 : Form
     {
         FormResizer resizer = new FormResizer();
+        KlaKloukFaces selectedFace;
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();           
             resizer.Capture(this);
             this.Resize += (s, e) => resizer.Resize(this);
         }
@@ -52,6 +53,41 @@ namespace KlaKlouk
             plate.Parent = backGround;
             plate.BackColor = Color.Transparent;
            
+        }
+
+        private void picBrrBrrPatapim_Click(object sender, EventArgs e)
+        {
+            selectedFace = KlaKloukFaces.BrrBrrPatapim;
+        }
+
+        private void picTungTungTungSahur_Click(object sender, EventArgs e)
+        {
+            selectedFace = KlaKloukFaces.TungTungTungSahur;
+        }
+
+        private void picBombardiroCrocodilo_Click(object sender, EventArgs e)
+        {
+            selectedFace = KlaKloukFaces.BombardiroCrocodilo;
+        }
+
+        private void picChimpanziniBananini_Click(object sender, EventArgs e)
+        {
+            selectedFace = KlaKloukFaces.ChimpanziniBananini;
+        }
+
+        private void picCappuccinoAssassino_Click(object sender, EventArgs e)
+        {
+            selectedFace = KlaKloukFaces.CappuccinoAssassino;
+        }
+
+        private void picTralaleroTralala_Click(object sender, EventArgs e)
+        {
+            selectedFace = KlaKloukFaces.TralaleroTralala;
+        }
+
+        private void btnRoll_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
