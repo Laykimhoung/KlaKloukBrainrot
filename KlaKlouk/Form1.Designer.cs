@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.borderBoard = new System.Windows.Forms.Panel();
             this.board = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.CasinoMan = new System.Windows.Forms.PictureBox();
+            this.picTralaleroTralala = new System.Windows.Forms.PictureBox();
+            this.picBombardiroCrocodilo = new System.Windows.Forms.PictureBox();
+            this.picCappuccinoAssassino = new System.Windows.Forms.PictureBox();
+            this.picTungTungTungSahur = new System.Windows.Forms.PictureBox();
+            this.picChimpanziniBananini = new System.Windows.Forms.PictureBox();
+            this.picBrrBrrPatapim = new System.Windows.Forms.PictureBox();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.btnRoll = new System.Windows.Forms.Button();
             this.btnPlate = new System.Windows.Forms.Button();
@@ -43,26 +51,15 @@
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.lbLastRoll = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pic = new System.Windows.Forms.PictureBox();
+            this.picDice2 = new System.Windows.Forms.PictureBox();
+            this.picDice3 = new System.Windows.Forms.PictureBox();
+            this.picDice1 = new System.Windows.Forms.PictureBox();
             this.coverPlate = new System.Windows.Forms.PictureBox();
             this.plate = new System.Windows.Forms.PictureBox();
-            this.CasinoMan = new System.Windows.Forms.PictureBox();
-            this.picTralaleroTralala = new System.Windows.Forms.PictureBox();
-            this.picBombardiroCrocodilo = new System.Windows.Forms.PictureBox();
-            this.picCappuccinoAssassino = new System.Windows.Forms.PictureBox();
-            this.picTungTungTungSahur = new System.Windows.Forms.PictureBox();
-            this.picChimpanziniBananini = new System.Windows.Forms.PictureBox();
-            this.picBrrBrrPatapim = new System.Windows.Forms.PictureBox();
             this.backGround = new System.Windows.Forms.PictureBox();
+            this.diceTimer = new System.Windows.Forms.Timer(this.components);
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTralaleroTralala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBombardiroCrocodilo)).BeginInit();
@@ -70,6 +67,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTungTungTungSahur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChimpanziniBananini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBrrBrrPatapim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backGround)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +138,82 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "ចាក់ហើយដកដៃ";
             // 
+            // CasinoMan
+            // 
+            this.CasinoMan.Image = global::KlaKlouk.Properties.Resources.Gemini_Generated_Image_vgadrpvgadrpvgad_removebg_preview;
+            this.CasinoMan.Location = new System.Drawing.Point(386, 93);
+            this.CasinoMan.Name = "CasinoMan";
+            this.CasinoMan.Size = new System.Drawing.Size(160, 166);
+            this.CasinoMan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CasinoMan.TabIndex = 6;
+            this.CasinoMan.TabStop = false;
+            // 
+            // picTralaleroTralala
+            // 
+            this.picTralaleroTralala.Image = global::KlaKlouk.Properties.Resources.TralaleroTralala;
+            this.picTralaleroTralala.Location = new System.Drawing.Point(260, 132);
+            this.picTralaleroTralala.Name = "picTralaleroTralala";
+            this.picTralaleroTralala.Size = new System.Drawing.Size(120, 120);
+            this.picTralaleroTralala.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTralaleroTralala.TabIndex = 5;
+            this.picTralaleroTralala.TabStop = false;
+            this.picTralaleroTralala.Click += new System.EventHandler(this.picTralaleroTralala_Click);
+            // 
+            // picBombardiroCrocodilo
+            // 
+            this.picBombardiroCrocodilo.Image = global::KlaKlouk.Properties.Resources.BombardiroCrocodilo;
+            this.picBombardiroCrocodilo.Location = new System.Drawing.Point(260, 8);
+            this.picBombardiroCrocodilo.Name = "picBombardiroCrocodilo";
+            this.picBombardiroCrocodilo.Size = new System.Drawing.Size(120, 120);
+            this.picBombardiroCrocodilo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBombardiroCrocodilo.TabIndex = 4;
+            this.picBombardiroCrocodilo.TabStop = false;
+            this.picBombardiroCrocodilo.Click += new System.EventHandler(this.picBombardiroCrocodilo_Click);
+            // 
+            // picCappuccinoAssassino
+            // 
+            this.picCappuccinoAssassino.Image = global::KlaKlouk.Properties.Resources.CappuccinoAssassino;
+            this.picCappuccinoAssassino.Location = new System.Drawing.Point(134, 132);
+            this.picCappuccinoAssassino.Name = "picCappuccinoAssassino";
+            this.picCappuccinoAssassino.Size = new System.Drawing.Size(120, 120);
+            this.picCappuccinoAssassino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCappuccinoAssassino.TabIndex = 3;
+            this.picCappuccinoAssassino.TabStop = false;
+            this.picCappuccinoAssassino.Click += new System.EventHandler(this.picCappuccinoAssassino_Click);
+            // 
+            // picTungTungTungSahur
+            // 
+            this.picTungTungTungSahur.Image = global::KlaKlouk.Properties.Resources.TungTungTungSahur;
+            this.picTungTungTungSahur.Location = new System.Drawing.Point(134, 8);
+            this.picTungTungTungSahur.Name = "picTungTungTungSahur";
+            this.picTungTungTungSahur.Size = new System.Drawing.Size(120, 120);
+            this.picTungTungTungSahur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTungTungTungSahur.TabIndex = 2;
+            this.picTungTungTungSahur.TabStop = false;
+            this.picTungTungTungSahur.Click += new System.EventHandler(this.picTungTungTungSahur_Click);
+            // 
+            // picChimpanziniBananini
+            // 
+            this.picChimpanziniBananini.Image = global::KlaKlouk.Properties.Resources.ChimpanziniBananini;
+            this.picChimpanziniBananini.Location = new System.Drawing.Point(8, 132);
+            this.picChimpanziniBananini.Name = "picChimpanziniBananini";
+            this.picChimpanziniBananini.Size = new System.Drawing.Size(120, 120);
+            this.picChimpanziniBananini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picChimpanziniBananini.TabIndex = 1;
+            this.picChimpanziniBananini.TabStop = false;
+            this.picChimpanziniBananini.Click += new System.EventHandler(this.picChimpanziniBananini_Click);
+            // 
+            // picBrrBrrPatapim
+            // 
+            this.picBrrBrrPatapim.Image = global::KlaKlouk.Properties.Resources.BrrBrrPatapim;
+            this.picBrrBrrPatapim.Location = new System.Drawing.Point(8, 8);
+            this.picBrrBrrPatapim.Name = "picBrrBrrPatapim";
+            this.picBrrBrrPatapim.Size = new System.Drawing.Size(120, 120);
+            this.picBrrBrrPatapim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBrrBrrPatapim.TabIndex = 0;
+            this.picBrrBrrPatapim.TabStop = false;
+            this.picBrrBrrPatapim.Click += new System.EventHandler(this.picBrrBrrPatapim_Click);
+            // 
             // lbWelcome
             // 
             this.lbWelcome.AutoSize = true;
@@ -151,7 +229,7 @@
             // 
             // btnRoll
             // 
-            this.btnRoll.BackColor = System.Drawing.Color.Yellow;
+            this.btnRoll.BackColor = System.Drawing.Color.HotPink;
             this.btnRoll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRoll.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoll.ForeColor = System.Drawing.Color.Black;
@@ -251,35 +329,35 @@
             this.lbLastRoll.TabIndex = 14;
             this.lbLastRoll.Text = "គ្រាប់ចុងក្រោយ:";
             // 
-            // pictureBox3
+            // picDice2
             // 
-            this.pictureBox3.Image = global::KlaKlouk.Properties.Resources.BombardiroCrocodilo;
-            this.pictureBox3.Location = new System.Drawing.Point(909, 336);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(35, 37);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
+            this.picDice2.Image = global::KlaKlouk.Properties.Resources.BombardiroCrocodilo;
+            this.picDice2.Location = new System.Drawing.Point(912, 349);
+            this.picDice2.Name = "picDice2";
+            this.picDice2.Size = new System.Drawing.Size(40, 40);
+            this.picDice2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDice2.TabIndex = 10;
+            this.picDice2.TabStop = false;
             // 
-            // pictureBox2
+            // picDice3
             // 
-            this.pictureBox2.Image = global::KlaKlouk.Properties.Resources.TralaleroTralala;
-            this.pictureBox2.Location = new System.Drawing.Point(863, 379);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
+            this.picDice3.Image = global::KlaKlouk.Properties.Resources.TralaleroTralala;
+            this.picDice3.Location = new System.Drawing.Point(863, 397);
+            this.picDice3.Name = "picDice3";
+            this.picDice3.Size = new System.Drawing.Size(40, 40);
+            this.picDice3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDice3.TabIndex = 16;
+            this.picDice3.TabStop = false;
             // 
-            // pic
+            // picDice1
             // 
-            this.pic.Image = global::KlaKlouk.Properties.Resources.TungTungTungSahur;
-            this.pic.Location = new System.Drawing.Point(845, 314);
-            this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(39, 36);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic.TabIndex = 15;
-            this.pic.TabStop = false;
+            this.picDice1.Image = global::KlaKlouk.Properties.Resources.TungTungTungSahur;
+            this.picDice1.Location = new System.Drawing.Point(852, 333);
+            this.picDice1.Name = "picDice1";
+            this.picDice1.Size = new System.Drawing.Size(40, 40);
+            this.picDice1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picDice1.TabIndex = 15;
+            this.picDice1.TabStop = false;
             // 
             // coverPlate
             // 
@@ -301,82 +379,6 @@
             this.plate.TabIndex = 6;
             this.plate.TabStop = false;
             // 
-            // CasinoMan
-            // 
-            this.CasinoMan.Image = global::KlaKlouk.Properties.Resources.Gemini_Generated_Image_vgadrpvgadrpvgad_removebg_preview;
-            this.CasinoMan.Location = new System.Drawing.Point(386, 93);
-            this.CasinoMan.Name = "CasinoMan";
-            this.CasinoMan.Size = new System.Drawing.Size(160, 166);
-            this.CasinoMan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CasinoMan.TabIndex = 6;
-            this.CasinoMan.TabStop = false;
-            // 
-            // picTralaleroTralala
-            // 
-            this.picTralaleroTralala.Image = global::KlaKlouk.Properties.Resources.TralaleroTralala;
-            this.picTralaleroTralala.Location = new System.Drawing.Point(260, 132);
-            this.picTralaleroTralala.Name = "picTralaleroTralala";
-            this.picTralaleroTralala.Size = new System.Drawing.Size(120, 120);
-            this.picTralaleroTralala.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTralaleroTralala.TabIndex = 5;
-            this.picTralaleroTralala.TabStop = false;
-            this.picTralaleroTralala.Click += new System.EventHandler(this.picTralaleroTralala_Click);
-            // 
-            // picBombardiroCrocodilo
-            // 
-            this.picBombardiroCrocodilo.Image = global::KlaKlouk.Properties.Resources.BombardiroCrocodilo;
-            this.picBombardiroCrocodilo.Location = new System.Drawing.Point(260, 8);
-            this.picBombardiroCrocodilo.Name = "picBombardiroCrocodilo";
-            this.picBombardiroCrocodilo.Size = new System.Drawing.Size(120, 120);
-            this.picBombardiroCrocodilo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBombardiroCrocodilo.TabIndex = 4;
-            this.picBombardiroCrocodilo.TabStop = false;
-            this.picBombardiroCrocodilo.Click += new System.EventHandler(this.picBombardiroCrocodilo_Click);
-            // 
-            // picCappuccinoAssassino
-            // 
-            this.picCappuccinoAssassino.Image = global::KlaKlouk.Properties.Resources.CappuccinoAssassino;
-            this.picCappuccinoAssassino.Location = new System.Drawing.Point(134, 132);
-            this.picCappuccinoAssassino.Name = "picCappuccinoAssassino";
-            this.picCappuccinoAssassino.Size = new System.Drawing.Size(120, 120);
-            this.picCappuccinoAssassino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCappuccinoAssassino.TabIndex = 3;
-            this.picCappuccinoAssassino.TabStop = false;
-            this.picCappuccinoAssassino.Click += new System.EventHandler(this.picCappuccinoAssassino_Click);
-            // 
-            // picTungTungTungSahur
-            // 
-            this.picTungTungTungSahur.Image = global::KlaKlouk.Properties.Resources.TungTungTungSahur;
-            this.picTungTungTungSahur.Location = new System.Drawing.Point(134, 8);
-            this.picTungTungTungSahur.Name = "picTungTungTungSahur";
-            this.picTungTungTungSahur.Size = new System.Drawing.Size(120, 120);
-            this.picTungTungTungSahur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picTungTungTungSahur.TabIndex = 2;
-            this.picTungTungTungSahur.TabStop = false;
-            this.picTungTungTungSahur.Click += new System.EventHandler(this.picTungTungTungSahur_Click);
-            // 
-            // picChimpanziniBananini
-            // 
-            this.picChimpanziniBananini.Image = global::KlaKlouk.Properties.Resources.ChimpanziniBananini;
-            this.picChimpanziniBananini.Location = new System.Drawing.Point(8, 132);
-            this.picChimpanziniBananini.Name = "picChimpanziniBananini";
-            this.picChimpanziniBananini.Size = new System.Drawing.Size(120, 120);
-            this.picChimpanziniBananini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picChimpanziniBananini.TabIndex = 1;
-            this.picChimpanziniBananini.TabStop = false;
-            this.picChimpanziniBananini.Click += new System.EventHandler(this.picChimpanziniBananini_Click);
-            // 
-            // picBrrBrrPatapim
-            // 
-            this.picBrrBrrPatapim.Image = global::KlaKlouk.Properties.Resources.BrrBrrPatapim;
-            this.picBrrBrrPatapim.Location = new System.Drawing.Point(8, 8);
-            this.picBrrBrrPatapim.Name = "picBrrBrrPatapim";
-            this.picBrrBrrPatapim.Size = new System.Drawing.Size(120, 120);
-            this.picBrrBrrPatapim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBrrBrrPatapim.TabIndex = 0;
-            this.picBrrBrrPatapim.TabStop = false;
-            this.picBrrBrrPatapim.Click += new System.EventHandler(this.picBrrBrrPatapim_Click);
-            // 
             // backGround
             // 
             this.backGround.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -388,14 +390,19 @@
             this.backGround.TabIndex = 0;
             this.backGround.TabStop = false;
             // 
+            // diceTimer
+            // 
+            this.diceTimer.Interval = 50;
+            this.diceTimer.Tick += new System.EventHandler(this.diceTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 529);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pic);
+            this.Controls.Add(this.picDice2);
+            this.Controls.Add(this.picDice3);
+            this.Controls.Add(this.picDice1);
             this.Controls.Add(this.lbLastRoll);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbUserName);
@@ -416,11 +423,6 @@
             this.borderBoard.ResumeLayout(false);
             this.board.ResumeLayout(false);
             this.board.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTralaleroTralala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBombardiroCrocodilo)).EndInit();
@@ -428,6 +430,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTungTungTungSahur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChimpanziniBananini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBrrBrrPatapim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picDice1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backGround)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -460,9 +467,10 @@
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label lbLastRoll;
-        private System.Windows.Forms.PictureBox pic;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picDice1;
+        private System.Windows.Forms.PictureBox picDice3;
+        private System.Windows.Forms.PictureBox picDice2;
+        private System.Windows.Forms.Timer diceTimer;
     }
 }
 

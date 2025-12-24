@@ -25,7 +25,36 @@ namespace KlaKlouk
     {
         FormResizer resizer = new FormResizer();
         KlaKloukFaces selectedFace;
+        Random rnd = new Random();
+        KlaKloukFaces[] dice = new KlaKloukFaces[3];       
 
+        Image GetImage(KlaKloukFaces s)
+        {
+            switch (s)
+            {
+                case KlaKloukFaces.BrrBrrPatapim: return Properties.Resources.BrrBrrPatapim;
+                case KlaKloukFaces.TungTungTungSahur: return Properties.Resources.TungTungTungSahur;
+                case KlaKloukFaces.BombardiroCrocodilo: return Properties.Resources.BombardiroCrocodilo;
+                case KlaKloukFaces.ChimpanziniBananini: return Properties.Resources.ChimpanziniBananini;
+                case KlaKloukFaces.CappuccinoAssassino: return Properties.Resources.CappuccinoAssassino;
+                case KlaKloukFaces.TralaleroTralala: return Properties.Resources.TralaleroTralala;
+            }
+            return null;
+        }
+        void RollDice()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                dice[i] = (KlaKloukFaces)rnd.Next(0, 6);
+            }
+        }
+
+        void ShowDice()
+        {
+            picDice1.Image = GetImage(dice[0]);
+            picDice2.Image = GetImage(dice[1]);
+            picDice3.Image = GetImage(dice[2]);
+        }
         public Form1()
         {
             InitializeComponent();           
@@ -84,10 +113,28 @@ namespace KlaKlouk
         {
             selectedFace = KlaKloukFaces.TralaleroTralala;
         }
-
+        bool isRolling = false;
         private void btnRoll_Click(object sender, EventArgs e)
+        {           
+            if (!isRolling)
+            {
+                diceTimer.Start();
+                btnRoll.Text = "ឈប់បង្វិល";
+                btnRoll.BackColor = Color.Red;
+                isRolling = true;
+            }
+            else
+            {
+                diceTimer.Stop();
+                btnRoll.Text = "បង្វិលគ្រាប់";
+                btnRoll.BackColor = Color.Lime;
+                isRolling = false;
+            }
+        }
+        private void diceTimer_Tick(object sender, EventArgs e)
         {
-            
+            RollDice();
+            ShowDice();
         }
     }
 }
