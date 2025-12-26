@@ -59,6 +59,7 @@ namespace KlaKlouk
         {
             InitializeComponent();           
             resizer.Capture(this);
+            resizer.IgnoreControls.Add(coverPlate);
             this.Resize += (s, e) => resizer.Resize(this);
         }
 
@@ -82,10 +83,13 @@ namespace KlaKlouk
             plate.Parent = backGround;
             plate.BackColor = Color.Transparent;
 
-            originalY = coverPlate.Top;
+            
 
-            // slide to center of plate
-            targetY = plate.Top - 10;
+            // IMPORTANT: ignore animated control
+           
+
+            UpdateCoverLayout();
+            coverPlate.Top = originalY;
 
         }
         
@@ -146,6 +150,7 @@ namespace KlaKlouk
 
         int originalY;
         int targetY;
+
         private void btnRotate_Click(object sender, EventArgs e)
         {
             coverPlate.BringToFront(); // must be on top
@@ -199,6 +204,26 @@ namespace KlaKlouk
                     picDice3.Visible = true;
                 }
             }
+        }
+        private void UpdateCoverLayout()
+        {
+            // Golden always matches plate
+            coverPlate.Width = plate.Width;
+            coverPlate.Height = plate.Height;
+            coverPlate.Left = plate.Left;
+
+            // Positions
+            targetY = plate.Top;
+            originalY = plate.Top - coverPlate.Height;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            resizer.Resize(this);
+
+            UpdateCoverLayout();
+
+            coverPlate.Top = isCovering ? targetY : originalY;
         }
     }
 }

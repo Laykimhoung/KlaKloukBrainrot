@@ -505,6 +505,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.borderBoard.ResumeLayout(false);
             this.board.ResumeLayout(false);
             this.board.PerformLayout();
