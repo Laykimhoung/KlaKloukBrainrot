@@ -63,9 +63,59 @@ namespace KlaKlouk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _495380540_1234634998667322_7231814058636201929_n_removebg_preview {
+        internal static System.Drawing.Bitmap _100dollar {
             get {
-                object obj = ResourceManager.GetObject("495380540_1234634998667322_7231814058636201929_n-removebg-preview", resourceCulture);
+                object obj = ResourceManager.GetObject("100dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _10dollar {
+            get {
+                object obj = ResourceManager.GetObject("10dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1dollar {
+            get {
+                object obj = ResourceManager.GetObject("1dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20dollar {
+            get {
+                object obj = ResourceManager.GetObject("20dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _50dollar {
+            get {
+                object obj = ResourceManager.GetObject("50dollar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5dollar {
+            get {
+                object obj = ResourceManager.GetObject("5dollar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,16 +136,6 @@ namespace KlaKlouk.Properties {
         internal static System.Drawing.Bitmap BrrBrrPatapim {
             get {
                 object obj = ResourceManager.GetObject("BrrBrrPatapim", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap BrrBrrPatapim1 {
-            get {
-                object obj = ResourceManager.GetObject("BrrBrrPatapim1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,16 +186,6 @@ namespace KlaKlouk.Properties {
         internal static System.Drawing.Bitmap Gemini_Generated_Image_vgadrpvgadrpvgad_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_vgadrpvgadrpvgad-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Plate {
-            get {
-                object obj = ResourceManager.GetObject("Plate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

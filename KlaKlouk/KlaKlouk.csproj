@@ -88,12 +88,6 @@
     <None Include="Resources\Gemini_Generated_Image_vgadrpvgadrpvgad-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\495380540_1234634998667322_7231814058636201929_n-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Plate.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Cover.png" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +110,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TralaleroTralala.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1dollar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5dollar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10dollar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20dollar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\50dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\100dollar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -44,20 +44,27 @@
             this.picBrrBrrPatapim = new System.Windows.Forms.PictureBox();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.btnRoll = new System.Windows.Forms.Button();
-            this.btnPlate = new System.Windows.Forms.Button();
+            this.btnRotate = new System.Windows.Forms.Button();
             this.btnResult = new System.Windows.Forms.Button();
             this.btnCashIn = new System.Windows.Forms.Button();
             this.btnCashOut = new System.Windows.Forms.Button();
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.lbLastRoll = new System.Windows.Forms.Label();
+            this.diceTimer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.picDice2 = new System.Windows.Forms.PictureBox();
             this.picDice3 = new System.Windows.Forms.PictureBox();
             this.picDice1 = new System.Windows.Forms.PictureBox();
-            this.coverPlate = new System.Windows.Forms.PictureBox();
             this.plate = new System.Windows.Forms.PictureBox();
             this.backGround = new System.Windows.Forms.PictureBox();
-            this.diceTimer = new System.Windows.Forms.Timer(this.components);
+            this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.coverPlate = new System.Windows.Forms.PictureBox();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).BeginInit();
@@ -67,12 +74,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTungTungTungSahur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChimpanziniBananini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBrrBrrPatapim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backGround)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).BeginInit();
             this.SuspendLayout();
             // 
             // borderBoard
@@ -241,18 +254,19 @@
             this.btnRoll.UseVisualStyleBackColor = false;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
-            // btnPlate
+            // btnRotate
             // 
-            this.btnPlate.BackColor = System.Drawing.Color.Red;
-            this.btnPlate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPlate.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlate.ForeColor = System.Drawing.Color.White;
-            this.btnPlate.Location = new System.Drawing.Point(364, 467);
-            this.btnPlate.Name = "btnPlate";
-            this.btnPlate.Size = new System.Drawing.Size(92, 36);
-            this.btnPlate.TabIndex = 8;
-            this.btnPlate.Text = "បិទគម្រប";
-            this.btnPlate.UseVisualStyleBackColor = false;
+            this.btnRotate.BackColor = System.Drawing.Color.Red;
+            this.btnRotate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRotate.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotate.ForeColor = System.Drawing.Color.Black;
+            this.btnRotate.Location = new System.Drawing.Point(364, 467);
+            this.btnRotate.Name = "btnRotate";
+            this.btnRotate.Size = new System.Drawing.Size(92, 36);
+            this.btnRotate.TabIndex = 8;
+            this.btnRotate.Text = "បិទគម្រប";
+            this.btnRotate.UseVisualStyleBackColor = false;
+            this.btnRotate.Click += new System.EventHandler(this.btnRotate_Click);
             // 
             // btnResult
             // 
@@ -329,6 +343,71 @@
             this.lbLastRoll.TabIndex = 14;
             this.lbLastRoll.Text = "គ្រាប់ចុងក្រោយ:";
             // 
+            // diceTimer
+            // 
+            this.diceTimer.Interval = 50;
+            this.diceTimer.Tick += new System.EventHandler(this.diceTimer_Tick);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::KlaKlouk.Properties.Resources._100dollar;
+            this.pictureBox6.Location = new System.Drawing.Point(117, 223);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(99, 44);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 22;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::KlaKlouk.Properties.Resources._20dollar;
+            this.pictureBox5.Location = new System.Drawing.Point(117, 155);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(99, 44);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 21;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::KlaKlouk.Properties.Resources._5dollar;
+            this.pictureBox4.Location = new System.Drawing.Point(117, 89);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(99, 44);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 20;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::KlaKlouk.Properties.Resources._50dollar;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 223);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(99, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 19;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::KlaKlouk.Properties.Resources._10dollar;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 155);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(99, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 18;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::KlaKlouk.Properties.Resources._1dollar;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
             // picDice2
             // 
             this.picDice2.Image = global::KlaKlouk.Properties.Resources.BombardiroCrocodilo;
@@ -359,16 +438,6 @@
             this.picDice1.TabIndex = 15;
             this.picDice1.TabStop = false;
             // 
-            // coverPlate
-            // 
-            this.coverPlate.Image = global::KlaKlouk.Properties.Resources.Cover;
-            this.coverPlate.Location = new System.Drawing.Point(782, 70);
-            this.coverPlate.Name = "coverPlate";
-            this.coverPlate.Size = new System.Drawing.Size(211, 208);
-            this.coverPlate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.coverPlate.TabIndex = 7;
-            this.coverPlate.TabStop = false;
-            // 
             // plate
             // 
             this.plate.Image = global::KlaKlouk.Properties.Resources.platee;
@@ -390,16 +459,32 @@
             this.backGround.TabIndex = 0;
             this.backGround.TabStop = false;
             // 
-            // diceTimer
+            // rotateTimer
             // 
-            this.diceTimer.Interval = 50;
-            this.diceTimer.Tick += new System.EventHandler(this.diceTimer_Tick);
+            this.rotateTimer.Interval = 15;
+            this.rotateTimer.Tick += new System.EventHandler(this.rotateTimer_Tick);
+            // 
+            // coverPlate
+            // 
+            this.coverPlate.Image = global::KlaKlouk.Properties.Resources.Cover;
+            this.coverPlate.Location = new System.Drawing.Point(795, 70);
+            this.coverPlate.Name = "coverPlate";
+            this.coverPlate.Size = new System.Drawing.Size(211, 208);
+            this.coverPlate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.coverPlate.TabIndex = 7;
+            this.coverPlate.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 529);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picDice2);
             this.Controls.Add(this.picDice3);
             this.Controls.Add(this.picDice1);
@@ -409,7 +494,7 @@
             this.Controls.Add(this.btnCashOut);
             this.Controls.Add(this.btnCashIn);
             this.Controls.Add(this.btnResult);
-            this.Controls.Add(this.btnPlate);
+            this.Controls.Add(this.btnRotate);
             this.Controls.Add(this.coverPlate);
             this.Controls.Add(this.plate);
             this.Controls.Add(this.btnRoll);
@@ -430,12 +515,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTungTungTungSahur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChimpanziniBananini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBrrBrrPatapim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backGround)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coverPlate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,11 +547,10 @@
         private System.Windows.Forms.PictureBox CasinoMan;
         private System.Windows.Forms.Button btnRoll;
         private System.Windows.Forms.PictureBox plate;
-        private System.Windows.Forms.PictureBox coverPlate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnPlate;
+        private System.Windows.Forms.Button btnRotate;
         private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Button btnCashIn;
         private System.Windows.Forms.Button btnCashOut;
@@ -471,6 +561,14 @@
         private System.Windows.Forms.PictureBox picDice3;
         private System.Windows.Forms.PictureBox picDice2;
         private System.Windows.Forms.Timer diceTimer;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Timer rotateTimer;
+        private System.Windows.Forms.PictureBox coverPlate;
     }
 }
 

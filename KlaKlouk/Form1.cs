@@ -81,9 +81,14 @@ namespace KlaKlouk
 
             plate.Parent = backGround;
             plate.BackColor = Color.Transparent;
-           
-        }
 
+            originalY = coverPlate.Top;
+
+            // slide to center of plate
+            targetY = plate.Top - 10;
+
+        }
+        
         private void picBrrBrrPatapim_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.BrrBrrPatapim;
@@ -135,6 +140,65 @@ namespace KlaKlouk
         {
             RollDice();
             ShowDice();
+        }
+
+        bool isCovering = false;
+
+        int originalY;
+        int targetY;
+        private void btnRotate_Click(object sender, EventArgs e)
+        {
+            coverPlate.BringToFront(); // must be on top
+
+            // Hide dice when going down
+            if (!isCovering)
+            {
+                btnRotate.Text = "បើកគម្រប";
+                btnRotate.BackColor = Color.Lime;
+                picDice1.Visible = false;
+                picDice2.Visible = false;
+                picDice3.Visible = false;
+            }
+            else
+            {
+                btnRotate.Text = "បិទគម្រប";
+                btnRotate.BackColor = Color.Red;
+            }
+
+                rotateTimer.Start();
+        }
+
+        private void rotateTimer_Tick(object sender, EventArgs e)
+        {
+            int speed = 12;
+
+            if (!isCovering)
+            {
+                coverPlate.Top += speed;
+
+                if (coverPlate.Top >= targetY)
+                {
+                    coverPlate.Top = targetY;
+                    rotateTimer.Stop();
+                    isCovering = true;
+                }
+            }
+            else
+            {
+                coverPlate.Top -= speed;
+
+                if (coverPlate.Top <= originalY)
+                {
+                    coverPlate.Top = originalY;
+                    rotateTimer.Stop();
+                    isCovering = false;
+
+                    // Show dice again when golden goes back
+                    picDice1.Visible = true;
+                    picDice2.Visible = true;
+                    picDice3.Visible = true;
+                }
+            }
         }
     }
 }
