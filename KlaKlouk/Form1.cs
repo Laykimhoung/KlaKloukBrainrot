@@ -27,7 +27,6 @@ namespace KlaKlouk
         KlaKloukFaces selectedFace;
         Random rnd = new Random();
         KlaKloukFaces[] dice = new KlaKloukFaces[3];       
-
         Image GetImage(KlaKloukFaces s)
         {
             switch (s)
@@ -62,6 +61,12 @@ namespace KlaKlouk
             resizer.IgnoreControls.Add(coverPlate);
             this.Resize += (s, e) => resizer.Resize(this);
         }
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            resizer.Resize(this);
+            resizer.UpdateCoverLayout(plate, coverPlate);
+            coverPlate.Top = resizer.GetCoverTop(isCovering);
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -82,15 +87,9 @@ namespace KlaKlouk
 
             plate.Parent = backGround;
             plate.BackColor = Color.Transparent;
-
             
-
-            // IMPORTANT: ignore animated control
-           
-
-            UpdateCoverLayout();
-            coverPlate.Top = originalY;
-
+            resizer.UpdateCoverLayout(plate, coverPlate);
+            coverPlate.Top = resizer.GetCoverTop(isCovering);
         }
         
         private void picBrrBrrPatapim_Click(object sender, EventArgs e)
@@ -148,14 +147,10 @@ namespace KlaKlouk
 
         bool isCovering = false;
 
-        int originalY;
-        int targetY;
-
         private void btnRotate_Click(object sender, EventArgs e)
         {
-            coverPlate.BringToFront(); // must be on top
-
-            // Hide dice when going down
+            coverPlate.BringToFront(); 
+          
             if (!isCovering)
             {
                 btnRotate.Text = "បើកគម្រប";
@@ -170,7 +165,7 @@ namespace KlaKlouk
                 btnRotate.BackColor = Color.Red;
             }
 
-                rotateTimer.Start();
+            rotateTimer.Start();
         }
 
         private void rotateTimer_Tick(object sender, EventArgs e)
@@ -181,9 +176,9 @@ namespace KlaKlouk
             {
                 coverPlate.Top += speed;
 
-                if (coverPlate.Top >= targetY)
+                if (coverPlate.Top >= resizer.TargetCoverY)
                 {
-                    coverPlate.Top = targetY;
+                    coverPlate.Top = resizer.TargetCoverY;
                     rotateTimer.Stop();
                     isCovering = true;
                 }
@@ -192,9 +187,9 @@ namespace KlaKlouk
             {
                 coverPlate.Top -= speed;
 
-                if (coverPlate.Top <= originalY)
+                if (coverPlate.Top <= resizer.OriginalCoverY)
                 {
-                    coverPlate.Top = originalY;
+                    coverPlate.Top = resizer.OriginalCoverY;
                     rotateTimer.Stop();
                     isCovering = false;
 
@@ -204,26 +199,6 @@ namespace KlaKlouk
                     picDice3.Visible = true;
                 }
             }
-        }
-        private void UpdateCoverLayout()
-        {
-            // Golden always matches plate
-            coverPlate.Width = plate.Width;
-            coverPlate.Height = plate.Height;
-            coverPlate.Left = plate.Left;
-
-            // Positions
-            targetY = plate.Top;
-            originalY = plate.Top - coverPlate.Height;
-        }
-
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            resizer.Resize(this);
-
-            UpdateCoverLayout();
-
-            coverPlate.Top = isCovering ? targetY : originalY;
-        }
+        }       
     }
 }

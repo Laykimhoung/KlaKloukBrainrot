@@ -16,6 +16,10 @@ namespace KlaKlouk
         private Dictionary<Control, float> originalFonts = new Dictionary<Control, float>();
         private bool isCaptured;
 
+        // Cover layout state
+        public int OriginalCoverY { get; private set; }
+        public int TargetCoverY { get; private set; }
+
         public void Capture(Form form)
         {
             if (form == null) throw new ArgumentNullException(nameof(form));
@@ -111,6 +115,25 @@ namespace KlaKlouk
                 if (c.HasChildren)
                     ResizeAllControls(c, xRatio, yRatio);
             }
+        }
+
+        // Move cover layout handling here
+        public void UpdateCoverLayout(Control plate, Control cover)
+        {
+            if (plate == null || cover == null)
+                return;
+
+            cover.Width = plate.Width;
+            cover.Height = plate.Height;
+            cover.Left = plate.Left;
+
+            TargetCoverY = plate.Top;
+            OriginalCoverY = plate.Top - cover.Height;
+        }
+
+        public int GetCoverTop(bool isCovering)
+        {
+            return isCovering ? TargetCoverY : OriginalCoverY;
         }
     }
 
