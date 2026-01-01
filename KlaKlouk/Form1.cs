@@ -26,7 +26,8 @@ namespace KlaKlouk
         FormResizer resizer = new FormResizer();
         KlaKloukFaces selectedFace;
         Random rnd = new Random();
-        KlaKloukFaces[] dice = new KlaKloukFaces[3];       
+        KlaKloukFaces[] dice = new KlaKloukFaces[3];  
+        
         Image GetImage(KlaKloukFaces s)
         {
             switch (s)
@@ -40,6 +41,7 @@ namespace KlaKlouk
             }
             return null;
         }
+
         void RollDice()
         {
             for (int i = 0; i < 3; i++)
@@ -54,6 +56,7 @@ namespace KlaKlouk
             picDice2.Image = GetImage(dice[1]);
             picDice3.Image = GetImage(dice[2]);
         }
+
         public Form1()
         {
             InitializeComponent();           
@@ -61,6 +64,7 @@ namespace KlaKlouk
             resizer.IgnoreControls.Add(coverPlate);
             this.Resize += (s, e) => resizer.Resize(this);
         }
+
         private void Form1_Resize(object sender, EventArgs e)
         {
             resizer.Resize(this);
@@ -121,6 +125,7 @@ namespace KlaKlouk
         {
             selectedFace = KlaKloukFaces.TralaleroTralala;
         }
+
         bool isRolling = false;
         private void btnRoll_Click(object sender, EventArgs e)
         {           
@@ -139,36 +144,36 @@ namespace KlaKlouk
                 isRolling = false;
             }
         }
+
         private void diceTimer_Tick(object sender, EventArgs e)
         {
             RollDice();
             ShowDice();
-        }
-
-        bool isCovering = false;
-
-        private void btnRotate_Click(object sender, EventArgs e)
+        }  
+        
+        private void btnCover_Click(object sender, EventArgs e)
         {
             coverPlate.BringToFront(); 
           
             if (!isCovering)
             {
-                btnRotate.Text = "បើកគម្រប";
-                btnRotate.BackColor = Color.Lime;
+                btnCover.Text = "បើកគម្រប";
+                btnCover.BackColor = Color.Lime;
                 picDice1.Visible = false;
                 picDice2.Visible = false;
                 picDice3.Visible = false;
             }
             else
             {
-                btnRotate.Text = "បិទគម្រប";
-                btnRotate.BackColor = Color.Red;
+                btnCover.Text = "បិទគម្រប";
+                btnCover.BackColor = Color.Red;
             }
 
-            rotateTimer.Start();
+            coverTimer.Start();
         }
 
-        private void rotateTimer_Tick(object sender, EventArgs e)
+        bool isCovering = false;
+        private void coverTimer_Tick(object sender, EventArgs e)
         {
             int speed = 12;
 
@@ -179,7 +184,7 @@ namespace KlaKlouk
                 if (coverPlate.Top >= resizer.TargetCoverY)
                 {
                     coverPlate.Top = resizer.TargetCoverY;
-                    rotateTimer.Stop();
+                    coverTimer.Stop();
                     isCovering = true;
                 }
             }
@@ -190,7 +195,7 @@ namespace KlaKlouk
                 if (coverPlate.Top <= resizer.OriginalCoverY)
                 {
                     coverPlate.Top = resizer.OriginalCoverY;
-                    rotateTimer.Stop();
+                    coverTimer.Stop();
                     isCovering = false;
 
                     // Show dice again when golden goes back

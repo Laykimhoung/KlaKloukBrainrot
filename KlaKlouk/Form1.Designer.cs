@@ -44,7 +44,7 @@
             this.picBrrBrrPatapim = new System.Windows.Forms.PictureBox();
             this.lbWelcome = new System.Windows.Forms.Label();
             this.btnRoll = new System.Windows.Forms.Button();
-            this.btnRotate = new System.Windows.Forms.Button();
+            this.btnCover = new System.Windows.Forms.Button();
             this.btnResult = new System.Windows.Forms.Button();
             this.btnCashIn = new System.Windows.Forms.Button();
             this.btnCashOut = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.picDice1 = new System.Windows.Forms.PictureBox();
             this.plate = new System.Windows.Forms.PictureBox();
             this.backGround = new System.Windows.Forms.PictureBox();
-            this.rotateTimer = new System.Windows.Forms.Timer(this.components);
+            this.coverTimer = new System.Windows.Forms.Timer(this.components);
             this.coverPlate = new System.Windows.Forms.PictureBox();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
@@ -254,19 +254,19 @@
             this.btnRoll.UseVisualStyleBackColor = false;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
-            // btnRotate
+            // btnCover
             // 
-            this.btnRotate.BackColor = System.Drawing.Color.Red;
-            this.btnRotate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRotate.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRotate.ForeColor = System.Drawing.Color.Black;
-            this.btnRotate.Location = new System.Drawing.Point(364, 467);
-            this.btnRotate.Name = "btnRotate";
-            this.btnRotate.Size = new System.Drawing.Size(92, 36);
-            this.btnRotate.TabIndex = 8;
-            this.btnRotate.Text = "បិទគម្រប";
-            this.btnRotate.UseVisualStyleBackColor = false;
-            this.btnRotate.Click += new System.EventHandler(this.btnRotate_Click);
+            this.btnCover.BackColor = System.Drawing.Color.Red;
+            this.btnCover.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCover.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCover.ForeColor = System.Drawing.Color.Black;
+            this.btnCover.Location = new System.Drawing.Point(364, 467);
+            this.btnCover.Name = "btnCover";
+            this.btnCover.Size = new System.Drawing.Size(92, 36);
+            this.btnCover.TabIndex = 8;
+            this.btnCover.Text = "បិទគម្រប";
+            this.btnCover.UseVisualStyleBackColor = false;
+            this.btnCover.Click += new System.EventHandler(this.btnCover_Click);
             // 
             // btnResult
             // 
@@ -459,10 +459,10 @@
             this.backGround.TabIndex = 0;
             this.backGround.TabStop = false;
             // 
-            // rotateTimer
+            // coverTimer
             // 
-            this.rotateTimer.Interval = 15;
-            this.rotateTimer.Tick += new System.EventHandler(this.rotateTimer_Tick);
+            this.coverTimer.Interval = 15;
+            this.coverTimer.Tick += new System.EventHandler(this.coverTimer_Tick);
             // 
             // coverPlate
             // 
@@ -494,7 +494,7 @@
             this.Controls.Add(this.btnCashOut);
             this.Controls.Add(this.btnCashIn);
             this.Controls.Add(this.btnResult);
-            this.Controls.Add(this.btnRotate);
+            this.Controls.Add(this.btnCover);
             this.Controls.Add(this.coverPlate);
             this.Controls.Add(this.plate);
             this.Controls.Add(this.btnRoll);
@@ -551,7 +551,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnRotate;
+        private System.Windows.Forms.Button btnCover;
         private System.Windows.Forms.Button btnResult;
         private System.Windows.Forms.Button btnCashIn;
         private System.Windows.Forms.Button btnCashOut;
@@ -568,7 +568,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Timer rotateTimer;
+        private System.Windows.Forms.Timer coverTimer;
         private System.Windows.Forms.PictureBox coverPlate;
     }
 }
