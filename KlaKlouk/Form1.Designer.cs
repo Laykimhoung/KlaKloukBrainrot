@@ -52,12 +52,12 @@
             this.lbTotal = new System.Windows.Forms.Label();
             this.lbLastRoll = new System.Windows.Forms.Label();
             this.diceTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picMoney100 = new System.Windows.Forms.PictureBox();
+            this.picMoney20 = new System.Windows.Forms.PictureBox();
+            this.picMoney5 = new System.Windows.Forms.PictureBox();
+            this.picMoney50 = new System.Windows.Forms.PictureBox();
+            this.picMoney10 = new System.Windows.Forms.PictureBox();
+            this.picMoney1 = new System.Windows.Forms.PictureBox();
             this.picDice2 = new System.Windows.Forms.PictureBox();
             this.picDice3 = new System.Windows.Forms.PictureBox();
             this.picDice1 = new System.Windows.Forms.PictureBox();
@@ -65,6 +65,12 @@
             this.backGround = new System.Windows.Forms.PictureBox();
             this.coverTimer = new System.Windows.Forms.Timer(this.components);
             this.coverPlate = new System.Windows.Forms.PictureBox();
+            this.lbBetBrr = new System.Windows.Forms.Label();
+            this.lbBetTung = new System.Windows.Forms.Label();
+            this.lbBetBomb = new System.Windows.Forms.Label();
+            this.lbBetChimp = new System.Windows.Forms.Label();
+            this.lbBetCap = new System.Windows.Forms.Label();
+            this.lbBetTral = new System.Windows.Forms.Label();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).BeginInit();
@@ -74,12 +80,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTungTungTungSahur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChimpanziniBananini)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBrrBrrPatapim)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney100)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice1)).BeginInit();
@@ -101,6 +107,12 @@
             // board
             // 
             this.board.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(88)))), ((int)(((byte)(44)))));
+            this.board.Controls.Add(this.lbBetTral);
+            this.board.Controls.Add(this.lbBetCap);
+            this.board.Controls.Add(this.lbBetChimp);
+            this.board.Controls.Add(this.lbBetBomb);
+            this.board.Controls.Add(this.lbBetTung);
+            this.board.Controls.Add(this.lbBetBrr);
             this.board.Controls.Add(this.label3);
             this.board.Controls.Add(this.label2);
             this.board.Controls.Add(this.label1);
@@ -293,6 +305,7 @@
             this.btnCashIn.TabIndex = 10;
             this.btnCashIn.Text = "ដាក់លុយ";
             this.btnCashIn.UseVisualStyleBackColor = false;
+            this.btnCashIn.Click += new System.EventHandler(this.btnCashIn_Click);
             // 
             // btnCashOut
             // 
@@ -306,6 +319,7 @@
             this.btnCashOut.TabIndex = 11;
             this.btnCashOut.Text = "ដកលុយ";
             this.btnCashOut.UseVisualStyleBackColor = false;
+            this.btnCashOut.Click += new System.EventHandler(this.btnCashOut_Click);
             // 
             // lbUserName
             // 
@@ -348,65 +362,71 @@
             this.diceTimer.Interval = 50;
             this.diceTimer.Tick += new System.EventHandler(this.diceTimer_Tick);
             // 
-            // pictureBox6
+            // picMoney100
             // 
-            this.pictureBox6.Image = global::KlaKlouk.Properties.Resources._100dollar;
-            this.pictureBox6.Location = new System.Drawing.Point(117, 223);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(99, 44);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 22;
-            this.pictureBox6.TabStop = false;
+            this.picMoney100.Image = global::KlaKlouk.Properties.Resources._100dollar;
+            this.picMoney100.Location = new System.Drawing.Point(117, 223);
+            this.picMoney100.Name = "picMoney100";
+            this.picMoney100.Size = new System.Drawing.Size(99, 44);
+            this.picMoney100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoney100.TabIndex = 22;
+            this.picMoney100.TabStop = false;
+            this.picMoney100.Click += new System.EventHandler(this.picMoney100_Click);
             // 
-            // pictureBox5
+            // picMoney20
             // 
-            this.pictureBox5.Image = global::KlaKlouk.Properties.Resources._20dollar;
-            this.pictureBox5.Location = new System.Drawing.Point(117, 155);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(99, 44);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 21;
-            this.pictureBox5.TabStop = false;
+            this.picMoney20.Image = global::KlaKlouk.Properties.Resources._20dollar;
+            this.picMoney20.Location = new System.Drawing.Point(117, 155);
+            this.picMoney20.Name = "picMoney20";
+            this.picMoney20.Size = new System.Drawing.Size(99, 44);
+            this.picMoney20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoney20.TabIndex = 21;
+            this.picMoney20.TabStop = false;
+            this.picMoney20.Click += new System.EventHandler(this.picMoney20_Click);
             // 
-            // pictureBox4
+            // picMoney5
             // 
-            this.pictureBox4.Image = global::KlaKlouk.Properties.Resources._5dollar;
-            this.pictureBox4.Location = new System.Drawing.Point(117, 89);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(99, 44);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 20;
-            this.pictureBox4.TabStop = false;
+            this.picMoney5.Image = global::KlaKlouk.Properties.Resources._5dollar;
+            this.picMoney5.Location = new System.Drawing.Point(117, 89);
+            this.picMoney5.Name = "picMoney5";
+            this.picMoney5.Size = new System.Drawing.Size(99, 44);
+            this.picMoney5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoney5.TabIndex = 20;
+            this.picMoney5.TabStop = false;
+            this.picMoney5.Click += new System.EventHandler(this.picMoney5_Click);
             // 
-            // pictureBox3
+            // picMoney50
             // 
-            this.pictureBox3.Image = global::KlaKlouk.Properties.Resources._50dollar;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 223);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(99, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 19;
-            this.pictureBox3.TabStop = false;
+            this.picMoney50.Image = global::KlaKlouk.Properties.Resources._50dollar;
+            this.picMoney50.Location = new System.Drawing.Point(12, 223);
+            this.picMoney50.Name = "picMoney50";
+            this.picMoney50.Size = new System.Drawing.Size(99, 44);
+            this.picMoney50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoney50.TabIndex = 19;
+            this.picMoney50.TabStop = false;
+            this.picMoney50.Click += new System.EventHandler(this.picMoney50_Click);
             // 
-            // pictureBox2
+            // picMoney10
             // 
-            this.pictureBox2.Image = global::KlaKlouk.Properties.Resources._10dollar;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 155);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(99, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
+            this.picMoney10.Image = global::KlaKlouk.Properties.Resources._10dollar;
+            this.picMoney10.Location = new System.Drawing.Point(12, 155);
+            this.picMoney10.Name = "picMoney10";
+            this.picMoney10.Size = new System.Drawing.Size(99, 44);
+            this.picMoney10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoney10.TabIndex = 18;
+            this.picMoney10.TabStop = false;
+            this.picMoney10.Click += new System.EventHandler(this.picMoney10_Click);
             // 
-            // pictureBox1
+            // picMoney1
             // 
-            this.pictureBox1.Image = global::KlaKlouk.Properties.Resources._1dollar;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 89);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.picMoney1.Image = global::KlaKlouk.Properties.Resources._1dollar;
+            this.picMoney1.Location = new System.Drawing.Point(12, 89);
+            this.picMoney1.Name = "picMoney1";
+            this.picMoney1.Size = new System.Drawing.Size(99, 44);
+            this.picMoney1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMoney1.TabIndex = 17;
+            this.picMoney1.TabStop = false;
+            this.picMoney1.Click += new System.EventHandler(this.picMoney1_Click);
             // 
             // picDice2
             // 
@@ -474,17 +494,77 @@
             this.coverPlate.TabIndex = 7;
             this.coverPlate.TabStop = false;
             // 
+            // lbBetBrr
+            // 
+            this.lbBetBrr.AutoSize = true;
+            this.lbBetBrr.ForeColor = System.Drawing.Color.White;
+            this.lbBetBrr.Location = new System.Drawing.Point(58, 113);
+            this.lbBetBrr.Name = "lbBetBrr";
+            this.lbBetBrr.Size = new System.Drawing.Size(14, 16);
+            this.lbBetBrr.TabIndex = 10;
+            this.lbBetBrr.Text = "$";
+            // 
+            // lbBetTung
+            // 
+            this.lbBetTung.AutoSize = true;
+            this.lbBetTung.ForeColor = System.Drawing.Color.White;
+            this.lbBetTung.Location = new System.Drawing.Point(185, 113);
+            this.lbBetTung.Name = "lbBetTung";
+            this.lbBetTung.Size = new System.Drawing.Size(14, 16);
+            this.lbBetTung.TabIndex = 11;
+            this.lbBetTung.Text = "$";
+            // 
+            // lbBetBomb
+            // 
+            this.lbBetBomb.AutoSize = true;
+            this.lbBetBomb.ForeColor = System.Drawing.Color.White;
+            this.lbBetBomb.Location = new System.Drawing.Point(313, 113);
+            this.lbBetBomb.Name = "lbBetBomb";
+            this.lbBetBomb.Size = new System.Drawing.Size(14, 16);
+            this.lbBetBomb.TabIndex = 12;
+            this.lbBetBomb.Text = "$";
+            // 
+            // lbBetChimp
+            // 
+            this.lbBetChimp.AutoSize = true;
+            this.lbBetChimp.ForeColor = System.Drawing.Color.White;
+            this.lbBetChimp.Location = new System.Drawing.Point(58, 240);
+            this.lbBetChimp.Name = "lbBetChimp";
+            this.lbBetChimp.Size = new System.Drawing.Size(14, 16);
+            this.lbBetChimp.TabIndex = 13;
+            this.lbBetChimp.Text = "$";
+            // 
+            // lbBetCap
+            // 
+            this.lbBetCap.AutoSize = true;
+            this.lbBetCap.ForeColor = System.Drawing.Color.White;
+            this.lbBetCap.Location = new System.Drawing.Point(185, 240);
+            this.lbBetCap.Name = "lbBetCap";
+            this.lbBetCap.Size = new System.Drawing.Size(14, 16);
+            this.lbBetCap.TabIndex = 14;
+            this.lbBetCap.Text = "$";
+            // 
+            // lbBetTral
+            // 
+            this.lbBetTral.AutoSize = true;
+            this.lbBetTral.ForeColor = System.Drawing.Color.White;
+            this.lbBetTral.Location = new System.Drawing.Point(313, 240);
+            this.lbBetTral.Name = "lbBetTral";
+            this.lbBetTral.Size = new System.Drawing.Size(14, 16);
+            this.lbBetTral.TabIndex = 15;
+            this.lbBetTral.Text = "$";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 529);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picMoney100);
+            this.Controls.Add(this.picMoney20);
+            this.Controls.Add(this.picMoney5);
+            this.Controls.Add(this.picMoney50);
+            this.Controls.Add(this.picMoney10);
+            this.Controls.Add(this.picMoney1);
             this.Controls.Add(this.picDice2);
             this.Controls.Add(this.picDice3);
             this.Controls.Add(this.picDice1);
@@ -516,12 +596,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.picTungTungTungSahur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picChimpanziniBananini)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBrrBrrPatapim)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney100)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMoney1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picDice1)).EndInit();
@@ -562,14 +642,20 @@
         private System.Windows.Forms.PictureBox picDice3;
         private System.Windows.Forms.PictureBox picDice2;
         private System.Windows.Forms.Timer diceTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox picMoney1;
+        private System.Windows.Forms.PictureBox picMoney10;
+        private System.Windows.Forms.PictureBox picMoney50;
+        private System.Windows.Forms.PictureBox picMoney5;
+        private System.Windows.Forms.PictureBox picMoney20;
+        private System.Windows.Forms.PictureBox picMoney100;
         private System.Windows.Forms.Timer coverTimer;
         private System.Windows.Forms.PictureBox coverPlate;
+        private System.Windows.Forms.Label lbBetBrr;
+        private System.Windows.Forms.Label lbBetTral;
+        private System.Windows.Forms.Label lbBetCap;
+        private System.Windows.Forms.Label lbBetChimp;
+        private System.Windows.Forms.Label lbBetBomb;
+        private System.Windows.Forms.Label lbBetTung;
     }
 }
 

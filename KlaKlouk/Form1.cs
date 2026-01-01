@@ -22,7 +22,7 @@ namespace KlaKlouk
     }
 
     public partial class Form1 : Form
-    {
+    {      
         FormResizer resizer = new FormResizer();
         KlaKloukFaces selectedFace;
         Random rnd = new Random();
@@ -58,8 +58,9 @@ namespace KlaKlouk
         }
 
         public Form1()
-        {
-            InitializeComponent();           
+        {          
+            InitializeComponent();
+            this.Text = "KlaKlouk Brainrot";
             resizer.Capture(this);
             resizer.IgnoreControls.Add(coverPlate);
             this.Resize += (s, e) => resizer.Resize(this);
@@ -74,6 +75,9 @@ namespace KlaKlouk
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            resizer.UpdateCoverLayout(plate, coverPlate);
+            coverPlate.Top = resizer.GetCoverTop(isCovering);
+
             lbWelcome.Parent = backGround;
             lbWelcome.BackColor = Color.Transparent;
 
@@ -91,39 +95,47 @@ namespace KlaKlouk
 
             plate.Parent = backGround;
             plate.BackColor = Color.Transparent;
-            
-            resizer.UpdateCoverLayout(plate, coverPlate);
-            coverPlate.Top = resizer.GetCoverTop(isCovering);
+           
+            foreach (KlaKloukFaces face in Enum.GetValues(typeof(KlaKloukFaces)))
+            {
+                bets[face] = 0;
+            }
         }
         
         private void picBrrBrrPatapim_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.BrrBrrPatapim;
+            PlaceBet(selectedFace);
         }
 
         private void picTungTungTungSahur_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.TungTungTungSahur;
+            PlaceBet(selectedFace);
         }
 
         private void picBombardiroCrocodilo_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.BombardiroCrocodilo;
+            PlaceBet(selectedFace);
         }
 
         private void picChimpanziniBananini_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.ChimpanziniBananini;
+            PlaceBet(selectedFace);
         }
 
         private void picCappuccinoAssassino_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.CappuccinoAssassino;
+            PlaceBet(selectedFace);
         }
 
         private void picTralaleroTralala_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.TralaleroTralala;
+            PlaceBet(selectedFace);
         }
 
         bool isRolling = false;
@@ -204,6 +216,101 @@ namespace KlaKlouk
                     picDice3.Visible = true;
                 }
             }
-        }       
+        }
+
+        // Player balance
+        int balance = 100; // example start money
+
+        // Selected bet amount (1$, 5$ ...)
+        int selectedBetAmount = 0;
+
+        // Enable / Disable betting mode
+        bool isBetting = false;
+
+        // Store total bet per face
+        Dictionary<KlaKloukFaces, int> bets = new Dictionary<KlaKloukFaces, int>();
+
+        private void btnCashIn_Click(object sender, EventArgs e)
+        {
+            isBetting = true;
+            selectedBetAmount = 0;
+            MessageBox.Show("Choose money, then click a face to bet.");
+        }
+
+        private void picMoney1_Click(object sender, EventArgs e)
+        {
+            if (!isBetting) return;
+            selectedBetAmount = 1;
+        }
+
+        private void picMoney5_Click(object sender, EventArgs e)
+        {
+            if (!isBetting) return;
+            selectedBetAmount = 5;
+        }
+
+        private void picMoney10_Click(object sender, EventArgs e)
+        {
+            if (!isBetting) return;
+            selectedBetAmount = 10;
+        }
+
+        private void picMoney20_Click(object sender, EventArgs e)
+        {
+            if (!isBetting) return;
+            selectedBetAmount = 20;
+        }
+
+        private void picMoney50_Click(object sender, EventArgs e)
+        {
+            if (!isBetting) return;
+            selectedBetAmount = 50;
+        }
+
+        private void picMoney100_Click(object sender, EventArgs e)
+        {
+            if (!isBetting) return;
+            selectedBetAmount = 100;
+        }
+        void PlaceBet(KlaKloukFaces face)
+        {
+            if (!isBetting) return;
+            if (selectedBetAmount <= 0) return;
+
+            if (balance < selectedBetAmount)
+            {
+                MessageBox.Show("Not enough money!");
+                return;
+            }
+
+            balance -= selectedBetAmount;
+            bets[face] += selectedBetAmount;
+
+            UpdateBetLabels();
+            lbTotal.Text = "Balance: $" + balance;
+        }
+        void UpdateBetLabels()
+        {
+            lbBetBrr.Text = "$" + bets[KlaKloukFaces.BrrBrrPatapim];
+            lbBetTung.Text = "$" + bets[KlaKloukFaces.TungTungTungSahur];
+            lbBetBomb.Text = "$" + bets[KlaKloukFaces.BombardiroCrocodilo];
+            lbBetChimp.Text = "$" + bets[KlaKloukFaces.ChimpanziniBananini];
+            lbBetCap.Text = "$" + bets[KlaKloukFaces.CappuccinoAssassino];
+            lbBetTral.Text = "$" + bets[KlaKloukFaces.TralaleroTralala];
+        }
+        private void btnCashOut_Click(object sender, EventArgs e)
+        {
+            foreach (var face in bets.Keys.ToList())
+            {
+                balance += bets[face];
+                bets[face] = 0;
+            }
+
+            selectedBetAmount = 0;
+            isBetting = false;
+
+            UpdateBetLabels();
+            lbTotal.Text = "Balance: $" + balance;
+        }
     }
 }
