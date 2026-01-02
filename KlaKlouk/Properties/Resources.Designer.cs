@@ -123,6 +123,16 @@ namespace KlaKlouk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bgLogIn {
+            get {
+                object obj = ResourceManager.GetObject("bgLogIn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BombardiroCrocodilo {
             get {
                 object obj = ResourceManager.GetObject("BombardiroCrocodilo", resourceCulture);

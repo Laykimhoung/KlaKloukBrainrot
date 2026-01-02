@@ -57,15 +57,16 @@ namespace KlaKlouk
             picDice3.Image = GetImage(dice[2]);
         }
 
-        public Form1()
+        public Form1(string name)
         {          
             InitializeComponent();
             this.Text = "KlaKlouk Brainrot";
+            lbUserName.Text = name;
             resizer.Capture(this);
             resizer.IgnoreControls.Add(coverPlate);
             this.Resize += (s, e) => resizer.Resize(this);
         }
-
+        
         private void Form1_Resize(object sender, EventArgs e)
         {
             resizer.Resize(this);
@@ -191,6 +192,7 @@ namespace KlaKlouk
 
             if (!isCovering)
             {
+                // COVER DOWN
                 coverPlate.Top += speed;
 
                 if (coverPlate.Top >= resizer.TargetCoverY)
@@ -198,10 +200,17 @@ namespace KlaKlouk
                     coverPlate.Top = resizer.TargetCoverY;
                     coverTimer.Stop();
                     isCovering = true;
+                   
+                    if (startRollingAfterCover)
+                    {
+                        diceTimer.Start();
+                        startRollingAfterCover = false;                        
+                    }
                 }
             }
             else
             {
+                // COVER UP
                 coverPlate.Top -= speed;
 
                 if (coverPlate.Top <= resizer.OriginalCoverY)
@@ -210,24 +219,23 @@ namespace KlaKlouk
                     coverTimer.Stop();
                     isCovering = false;
 
-                    // Show dice again when golden goes back
+                    // Show dice again
                     picDice1.Visible = true;
                     picDice2.Visible = true;
                     picDice3.Visible = true;
+
+                    if (isShowingResult)
+                    {
+                        ShowDice();
+                        CalculatePayout();
+                    }
                 }
             }
         }
 
-        // Player balance
-        int balance = 100; // example start money
-
-        // Selected bet amount (1$, 5$ ...)
+        int balance = 200; 
         int selectedBetAmount = 0;
-
-        // Enable / Disable betting mode
         bool isBetting = false;
-
-        // Store total bet per face
         Dictionary<KlaKloukFaces, int> bets = new Dictionary<KlaKloukFaces, int>();
 
         private void btnCashIn_Click(object sender, EventArgs e)
@@ -308,6 +316,74 @@ namespace KlaKlouk
 
             selectedBetAmount = 0;
             isBetting = false;
+
+            UpdateBetLabels();
+            lbTotal.Text = "Balance: $" + balance;
+        }
+
+        bool isResultMode = false;   // controls blue button state
+        bool isShowingResult = false;
+        bool startRollingAfterCover = false;
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            // FIRST CLICK → COVER + ROLL
+            if (!isResultMode)
+            {
+                // Lock betting
+                isBetting = false;
+                startRollingAfterCover = true;
+
+                picDice1.Visible = false;
+                picDice2.Visible = false;
+                picDice3.Visible = false;
+
+                // Cover the plate + dice
+                coverPlate.BringToFront();
+                coverTimer.Start();
+
+                btnResult.Text = "បង្ហាញលទ្ធផល";
+                btnResult.BackColor = Color.Red;
+
+                isResultMode = true;
+                isShowingResult = false;
+            }
+            // SECOND CLICK → SHOW RESULT + PAYOUT
+            else
+            {
+                diceTimer.Stop();          // stop dice rolling
+                coverTimer.Start();        // uncover
+
+                btnResult.Text = "លទ្ធផល";
+                btnResult.BackColor = Color.Blue;
+
+                isResultMode = false;
+                isShowingResult = true;
+            }
+        }
+        void CalculatePayout()
+        {
+            Dictionary<KlaKloukFaces, int> counts = new Dictionary<KlaKloukFaces, int>();
+
+            foreach (KlaKloukFaces face in Enum.GetValues(typeof(KlaKloukFaces)))
+                counts[face] = 0;
+
+            foreach (var d in dice)
+                counts[d]++;
+
+            foreach (var face in bets.Keys.ToList())
+            {
+                int bet = bets[face];
+                int times = counts[face];
+
+                if (bet > 0 && times > 0)
+                {
+                    // payout = bet × (times + orginal bet)
+                    balance += bets[face] * (times + 1);
+                }
+
+                bets[face] = 0;
+            }
 
             UpdateBetLabels();
             lbTotal.Text = "Balance: $" + balance;

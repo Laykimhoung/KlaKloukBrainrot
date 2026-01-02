@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.borderBoard = new System.Windows.Forms.Panel();
             this.board = new System.Windows.Forms.Panel();
+            this.lbBetTral = new System.Windows.Forms.Label();
+            this.lbBetCap = new System.Windows.Forms.Label();
+            this.lbBetChimp = new System.Windows.Forms.Label();
+            this.lbBetBomb = new System.Windows.Forms.Label();
+            this.lbBetTung = new System.Windows.Forms.Label();
+            this.lbBetBrr = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,12 +71,6 @@
             this.backGround = new System.Windows.Forms.PictureBox();
             this.coverTimer = new System.Windows.Forms.Timer(this.components);
             this.coverPlate = new System.Windows.Forms.PictureBox();
-            this.lbBetBrr = new System.Windows.Forms.Label();
-            this.lbBetTung = new System.Windows.Forms.Label();
-            this.lbBetBomb = new System.Windows.Forms.Label();
-            this.lbBetChimp = new System.Windows.Forms.Label();
-            this.lbBetCap = new System.Windows.Forms.Label();
-            this.lbBetTral = new System.Windows.Forms.Label();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).BeginInit();
@@ -129,6 +129,66 @@
             this.board.Padding = new System.Windows.Forms.Padding(5);
             this.board.Size = new System.Drawing.Size(550, 256);
             this.board.TabIndex = 0;
+            // 
+            // lbBetTral
+            // 
+            this.lbBetTral.AutoSize = true;
+            this.lbBetTral.ForeColor = System.Drawing.Color.White;
+            this.lbBetTral.Location = new System.Drawing.Point(313, 240);
+            this.lbBetTral.Name = "lbBetTral";
+            this.lbBetTral.Size = new System.Drawing.Size(14, 16);
+            this.lbBetTral.TabIndex = 15;
+            this.lbBetTral.Text = "$";
+            // 
+            // lbBetCap
+            // 
+            this.lbBetCap.AutoSize = true;
+            this.lbBetCap.ForeColor = System.Drawing.Color.White;
+            this.lbBetCap.Location = new System.Drawing.Point(185, 240);
+            this.lbBetCap.Name = "lbBetCap";
+            this.lbBetCap.Size = new System.Drawing.Size(14, 16);
+            this.lbBetCap.TabIndex = 14;
+            this.lbBetCap.Text = "$";
+            // 
+            // lbBetChimp
+            // 
+            this.lbBetChimp.AutoSize = true;
+            this.lbBetChimp.ForeColor = System.Drawing.Color.White;
+            this.lbBetChimp.Location = new System.Drawing.Point(58, 240);
+            this.lbBetChimp.Name = "lbBetChimp";
+            this.lbBetChimp.Size = new System.Drawing.Size(14, 16);
+            this.lbBetChimp.TabIndex = 13;
+            this.lbBetChimp.Text = "$";
+            // 
+            // lbBetBomb
+            // 
+            this.lbBetBomb.AutoSize = true;
+            this.lbBetBomb.ForeColor = System.Drawing.Color.White;
+            this.lbBetBomb.Location = new System.Drawing.Point(313, 113);
+            this.lbBetBomb.Name = "lbBetBomb";
+            this.lbBetBomb.Size = new System.Drawing.Size(14, 16);
+            this.lbBetBomb.TabIndex = 12;
+            this.lbBetBomb.Text = "$";
+            // 
+            // lbBetTung
+            // 
+            this.lbBetTung.AutoSize = true;
+            this.lbBetTung.ForeColor = System.Drawing.Color.White;
+            this.lbBetTung.Location = new System.Drawing.Point(185, 113);
+            this.lbBetTung.Name = "lbBetTung";
+            this.lbBetTung.Size = new System.Drawing.Size(14, 16);
+            this.lbBetTung.TabIndex = 11;
+            this.lbBetTung.Text = "$";
+            // 
+            // lbBetBrr
+            // 
+            this.lbBetBrr.AutoSize = true;
+            this.lbBetBrr.ForeColor = System.Drawing.Color.White;
+            this.lbBetBrr.Location = new System.Drawing.Point(58, 113);
+            this.lbBetBrr.Name = "lbBetBrr";
+            this.lbBetBrr.Size = new System.Drawing.Size(14, 16);
+            this.lbBetBrr.TabIndex = 10;
+            this.lbBetBrr.Text = "$";
             // 
             // label3
             // 
@@ -292,6 +352,7 @@
             this.btnResult.TabIndex = 9;
             this.btnResult.Text = "លទ្ធផល";
             this.btnResult.UseVisualStyleBackColor = false;
+            this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
             // btnCashIn
             // 
@@ -493,66 +554,6 @@
             this.coverPlate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.coverPlate.TabIndex = 7;
             this.coverPlate.TabStop = false;
-            // 
-            // lbBetBrr
-            // 
-            this.lbBetBrr.AutoSize = true;
-            this.lbBetBrr.ForeColor = System.Drawing.Color.White;
-            this.lbBetBrr.Location = new System.Drawing.Point(58, 113);
-            this.lbBetBrr.Name = "lbBetBrr";
-            this.lbBetBrr.Size = new System.Drawing.Size(14, 16);
-            this.lbBetBrr.TabIndex = 10;
-            this.lbBetBrr.Text = "$";
-            // 
-            // lbBetTung
-            // 
-            this.lbBetTung.AutoSize = true;
-            this.lbBetTung.ForeColor = System.Drawing.Color.White;
-            this.lbBetTung.Location = new System.Drawing.Point(185, 113);
-            this.lbBetTung.Name = "lbBetTung";
-            this.lbBetTung.Size = new System.Drawing.Size(14, 16);
-            this.lbBetTung.TabIndex = 11;
-            this.lbBetTung.Text = "$";
-            // 
-            // lbBetBomb
-            // 
-            this.lbBetBomb.AutoSize = true;
-            this.lbBetBomb.ForeColor = System.Drawing.Color.White;
-            this.lbBetBomb.Location = new System.Drawing.Point(313, 113);
-            this.lbBetBomb.Name = "lbBetBomb";
-            this.lbBetBomb.Size = new System.Drawing.Size(14, 16);
-            this.lbBetBomb.TabIndex = 12;
-            this.lbBetBomb.Text = "$";
-            // 
-            // lbBetChimp
-            // 
-            this.lbBetChimp.AutoSize = true;
-            this.lbBetChimp.ForeColor = System.Drawing.Color.White;
-            this.lbBetChimp.Location = new System.Drawing.Point(58, 240);
-            this.lbBetChimp.Name = "lbBetChimp";
-            this.lbBetChimp.Size = new System.Drawing.Size(14, 16);
-            this.lbBetChimp.TabIndex = 13;
-            this.lbBetChimp.Text = "$";
-            // 
-            // lbBetCap
-            // 
-            this.lbBetCap.AutoSize = true;
-            this.lbBetCap.ForeColor = System.Drawing.Color.White;
-            this.lbBetCap.Location = new System.Drawing.Point(185, 240);
-            this.lbBetCap.Name = "lbBetCap";
-            this.lbBetCap.Size = new System.Drawing.Size(14, 16);
-            this.lbBetCap.TabIndex = 14;
-            this.lbBetCap.Text = "$";
-            // 
-            // lbBetTral
-            // 
-            this.lbBetTral.AutoSize = true;
-            this.lbBetTral.ForeColor = System.Drawing.Color.White;
-            this.lbBetTral.Location = new System.Drawing.Point(313, 240);
-            this.lbBetTral.Name = "lbBetTral";
-            this.lbBetTral.Size = new System.Drawing.Size(14, 16);
-            this.lbBetTral.TabIndex = 15;
-            this.lbBetTral.Text = "$";
             // 
             // Form1
             // 
