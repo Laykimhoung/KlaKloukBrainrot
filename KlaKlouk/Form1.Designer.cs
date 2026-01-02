@@ -71,6 +71,7 @@
             this.backGround = new System.Windows.Forms.PictureBox();
             this.coverTimer = new System.Windows.Forms.Timer(this.components);
             this.coverPlate = new System.Windows.Forms.PictureBox();
+            this.lbResultStatus = new System.Windows.Forms.Label();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).BeginInit();
@@ -410,11 +411,11 @@
             // 
             this.lbLastRoll.AutoSize = true;
             this.lbLastRoll.BackColor = System.Drawing.Color.Black;
-            this.lbLastRoll.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLastRoll.Font = new System.Drawing.Font("Khmer OS Siemreap", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLastRoll.ForeColor = System.Drawing.Color.White;
-            this.lbLastRoll.Location = new System.Drawing.Point(683, 507);
+            this.lbLastRoll.Location = new System.Drawing.Point(-4, 517);
             this.lbLastRoll.Name = "lbLastRoll";
-            this.lbLastRoll.Size = new System.Drawing.Size(128, 33);
+            this.lbLastRoll.Size = new System.Drawing.Size(85, 22);
             this.lbLastRoll.TabIndex = 14;
             this.lbLastRoll.Text = "គ្រាប់ចុងក្រោយ:";
             // 
@@ -555,11 +556,24 @@
             this.coverPlate.TabIndex = 7;
             this.coverPlate.TabStop = false;
             // 
+            // lbResultStatus
+            // 
+            this.lbResultStatus.AutoSize = true;
+            this.lbResultStatus.BackColor = System.Drawing.Color.Black;
+            this.lbResultStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResultStatus.ForeColor = System.Drawing.Color.White;
+            this.lbResultStatus.Location = new System.Drawing.Point(687, 509);
+            this.lbResultStatus.Name = "lbResultStatus";
+            this.lbResultStatus.Size = new System.Drawing.Size(58, 29);
+            this.lbResultStatus.TabIndex = 23;
+            this.lbResultStatus.Text = "W/L";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 529);
+            this.Controls.Add(this.lbResultStatus);
             this.Controls.Add(this.picMoney100);
             this.Controls.Add(this.picMoney20);
             this.Controls.Add(this.picMoney5);
@@ -657,6 +671,7 @@
         private System.Windows.Forms.Label lbBetChimp;
         private System.Windows.Forms.Label lbBetBomb;
         private System.Windows.Forms.Label lbBetTung;
+        private System.Windows.Forms.Label lbResultStatus;
     }
 }
 

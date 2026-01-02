@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
 using System.Windows.Forms;
 
 namespace KlaKlouk
@@ -56,7 +57,14 @@ namespace KlaKlouk
             picDice2.Image = GetImage(dice[1]);
             picDice3.Image = GetImage(dice[2]);
         }
-
+        void UpdateLastRollLabel()
+        {
+            lbLastRoll.Text =
+                "គ្រាប់ចុងក្រោយ: " +
+                dice[0] + ", " +
+                dice[1] + ", " +
+                dice[2];
+        }
         public Form1(string name)
         {          
             InitializeComponent();
@@ -79,6 +87,9 @@ namespace KlaKlouk
             resizer.UpdateCoverLayout(plate, coverPlate);
             coverPlate.Top = resizer.GetCoverTop(isCovering);
 
+            SoundPlayer player = new SoundPlayer(@"Sounds\Welcome_Sound.wav");
+            player.Play();
+
             lbWelcome.Parent = backGround;
             lbWelcome.BackColor = Color.Transparent;
 
@@ -90,6 +101,9 @@ namespace KlaKlouk
 
             lbLastRoll.Parent = backGround;
             lbLastRoll.BackColor = Color.Transparent;
+
+            lbResultStatus.Parent = backGround;
+            lbResultStatus.BackColor = Color.Transparent;
 
             coverPlate.Parent = backGround;
             coverPlate.BackColor = Color.Transparent;
@@ -106,36 +120,48 @@ namespace KlaKlouk
         private void picBrrBrrPatapim_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.BrrBrrPatapim;
+            SoundPlayer player = new SoundPlayer(@"Sounds\BrrBrrPatapim_Sound.wav");
+            player.Play();
             PlaceBet(selectedFace);
         }
 
         private void picTungTungTungSahur_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.TungTungTungSahur;
+            SoundPlayer player = new SoundPlayer(@"Sounds\TungTungTungSahur_Sound.wav");
+            player.Play();
             PlaceBet(selectedFace);
         }
 
         private void picBombardiroCrocodilo_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.BombardiroCrocodilo;
+            SoundPlayer player = new SoundPlayer(@"Sounds\BombardiroCrocodilo_Sound.wav");
+            player.Play();
             PlaceBet(selectedFace);
         }
 
         private void picChimpanziniBananini_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.ChimpanziniBananini;
+            SoundPlayer player = new SoundPlayer(@"Sounds\ChimpanziniBananini_Sound.wav");
+            player.Play();
             PlaceBet(selectedFace);
         }
 
         private void picCappuccinoAssassino_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.CappuccinoAssassino;
+            SoundPlayer player = new SoundPlayer(@"Sounds\CappuccinoAssassino_Sound.wav");
+            player.Play();
             PlaceBet(selectedFace);
         }
 
         private void picTralaleroTralala_Click(object sender, EventArgs e)
         {
             selectedFace = KlaKloukFaces.TralaleroTralala;
+            SoundPlayer player = new SoundPlayer(@"Sounds\TralaleroTralala_Sound.wav");
+            player.Play();
             PlaceBet(selectedFace);
         }
 
@@ -228,6 +254,7 @@ namespace KlaKlouk
                     {
                         ShowDice();
                         CalculatePayout();
+                        UpdateLastRollLabel();
                     }
                 }
             }
@@ -371,6 +398,9 @@ namespace KlaKlouk
             foreach (var d in dice)
                 counts[d]++;
 
+            int totalBet = 0;
+            int totalReturn = 0;
+
             foreach (var face in bets.Keys.ToList())
             {
                 int bet = bets[face];
@@ -379,7 +409,9 @@ namespace KlaKlouk
                 if (bet > 0 && times > 0)
                 {
                     // payout = bet × (times + orginal bet)
-                    balance += bets[face] * (times + 1);
+                    int returned = bet * (times + 1);
+                    balance += returned;
+                    totalReturn += returned;
                 }
 
                 bets[face] = 0;
@@ -387,6 +419,27 @@ namespace KlaKlouk
 
             UpdateBetLabels();
             lbTotal.Text = "Balance: $" + balance;
+            ShowWinLose(totalBet, totalReturn);
         }
+        void ShowWinLose(int totalBet, int totalReturn)
+        {
+            int net = totalReturn - totalBet;
+
+            if (net > 0)
+            {
+                lbResultStatus.Text = "WIN + $" + net;
+                lbResultStatus.ForeColor = Color.LimeGreen;
+            }
+            else if (net < 0)
+            {
+                lbResultStatus.Text = "LOSE - $" + Math.Abs(net);
+                lbResultStatus.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbResultStatus.Text = "DRAW";
+                lbResultStatus.ForeColor = Color.Yellow;
+            }
+        }     
     }
 }
