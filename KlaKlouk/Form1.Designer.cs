@@ -52,7 +52,6 @@
             this.btnRoll = new System.Windows.Forms.Button();
             this.btnCover = new System.Windows.Forms.Button();
             this.btnResult = new System.Windows.Forms.Button();
-            this.btnCashIn = new System.Windows.Forms.Button();
             this.btnCashOut = new System.Windows.Forms.Button();
             this.lbUserName = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
@@ -356,27 +355,13 @@
             this.btnResult.UseVisualStyleBackColor = false;
             this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
-            // btnCashIn
-            // 
-            this.btnCashIn.BackColor = System.Drawing.Color.Lime;
-            this.btnCashIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCashIn.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCashIn.ForeColor = System.Drawing.Color.Black;
-            this.btnCashIn.Location = new System.Drawing.Point(12, 386);
-            this.btnCashIn.Name = "btnCashIn";
-            this.btnCashIn.Size = new System.Drawing.Size(103, 37);
-            this.btnCashIn.TabIndex = 10;
-            this.btnCashIn.Text = "ដាក់លុយ";
-            this.btnCashIn.UseVisualStyleBackColor = false;
-            this.btnCashIn.Click += new System.EventHandler(this.btnCashIn_Click);
-            // 
             // btnCashOut
             // 
             this.btnCashOut.BackColor = System.Drawing.Color.Red;
             this.btnCashOut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCashOut.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCashOut.ForeColor = System.Drawing.Color.Black;
-            this.btnCashOut.Location = new System.Drawing.Point(12, 429);
+            this.btnCashOut.Location = new System.Drawing.Point(13, 401);
             this.btnCashOut.Name = "btnCashOut";
             this.btnCashOut.Size = new System.Drawing.Size(103, 36);
             this.btnCashOut.TabIndex = 11;
@@ -601,7 +586,6 @@
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.lbUserName);
             this.Controls.Add(this.btnCashOut);
-            this.Controls.Add(this.btnCashIn);
             this.Controls.Add(this.btnResult);
             this.Controls.Add(this.btnCover);
             this.Controls.Add(this.coverPlate);
@@ -662,7 +646,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCover;
         private System.Windows.Forms.Button btnResult;
-        private System.Windows.Forms.Button btnCashIn;
         private System.Windows.Forms.Button btnCashOut;
         private System.Windows.Forms.Label lbUserName;
         private System.Windows.Forms.Label lbTotal;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.lbWelcome = new System.Windows.Forms.Label();
@@ -63,18 +64,18 @@
             // 
             this.lbWelcome.AutoSize = true;
             this.lbWelcome.BackColor = System.Drawing.Color.Black;
-            this.lbWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWelcome.Font = new System.Drawing.Font("Modern No. 20", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWelcome.ForeColor = System.Drawing.Color.White;
-            this.lbWelcome.Location = new System.Drawing.Point(250, 144);
+            this.lbWelcome.Location = new System.Drawing.Point(250, 178);
             this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(487, 38);
+            this.lbWelcome.Size = new System.Drawing.Size(509, 38);
             this.lbWelcome.TabIndex = 2;
             this.lbWelcome.Text = "Please Input Your User Name:";
             // 
             // txtInputName
             // 
             this.txtInputName.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInputName.Location = new System.Drawing.Point(257, 237);
+            this.txtInputName.Location = new System.Drawing.Point(257, 257);
             this.txtInputName.Name = "txtInputName";
             this.txtInputName.Size = new System.Drawing.Size(510, 45);
             this.txtInputName.TabIndex = 3;
@@ -88,6 +89,7 @@
             this.Controls.Add(this.lbWelcome);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

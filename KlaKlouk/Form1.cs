@@ -113,7 +113,9 @@ namespace KlaKlouk
 
             plate.Parent = backGround;
             plate.BackColor = Color.Transparent;
-           
+
+            lbCongrat.Text = String.Empty;  
+
             foreach (KlaKloukFaces face in Enum.GetValues(typeof(KlaKloukFaces)))
             {
                 bets[face] = 0;
@@ -261,58 +263,48 @@ namespace KlaKlouk
 
         int balance = 200; 
         int selectedBetAmount = 0;
-        bool isBetting = false;
-        Dictionary<KlaKloukFaces, int> bets = new Dictionary<KlaKloukFaces, int>();
-        private void btnCashIn_Click(object sender, EventArgs e)
-        {
-                isBetting = true;
-                selectedBetAmount = 0;
-                btnCashIn.Text = "សូមរើសទឹកប្រាក់";
-        }
+        Dictionary<KlaKloukFaces, int> bets = new Dictionary<KlaKloukFaces, int>();        
 
         private void picMoney1_Click(object sender, EventArgs e)
         {
-            if (!isBetting) return;
             selectedBetAmount = 1;
         }
 
         private void picMoney5_Click(object sender, EventArgs e)
         {
-            if (!isBetting) return;
             selectedBetAmount = 5;
         }
 
         private void picMoney10_Click(object sender, EventArgs e)
         {
-            if (!isBetting) return;
             selectedBetAmount = 10;
         }
 
         private void picMoney20_Click(object sender, EventArgs e)
         {
-            if (!isBetting) return;
             selectedBetAmount = 20;
         }
 
         private void picMoney50_Click(object sender, EventArgs e)
         {
-            if (!isBetting) return;
             selectedBetAmount = 50;
         }
 
         private void picMoney100_Click(object sender, EventArgs e)
         {
-            if (!isBetting) return;
             selectedBetAmount = 100;
         }
         void PlaceBet(KlaKloukFaces face)
         {
-            if (!isBetting) return;
-            if (selectedBetAmount <= 0) return;
+            if (selectedBetAmount <= 0)
+            {
+                MessageBox.Show("សូមជ្រើសទឹកប្រាក់ជាមុនសិន!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             if (balance < selectedBetAmount)
             {
-                MessageBox.Show("Not enough money!");
+                MessageBox.Show("ចាក់ឡើងអស់លុយហើយ​ រកចាក់ស្អីទៀត!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -340,7 +332,6 @@ namespace KlaKlouk
             }
 
             selectedBetAmount = 0;
-            isBetting = false;
 
             UpdateBetLabels();
             lbTotal.Text = "ទឹកប្រាក់សរុប: $" + balance;
@@ -349,14 +340,29 @@ namespace KlaKlouk
         bool isResultMode = false;
         bool isShowingResult = false;
         bool startRollingAfterCover = false;
+        bool HasAnyBet()
+        {
+            foreach (var bet in bets.Values)
+            {
+                if (bet > 0)
+                    return true;
+            }
+            return false;
+        }
 
         private void btnResult_Click(object sender, EventArgs e)
         {
+            // Lock betting
+            if (!HasAnyBet())
+            {
+                MessageBox.Show(
+                    "អ្នកមិនទាន់ដាក់ភ្នាល់ទេ!\nសូមដាក់ភ្នាល់មុនចាប់ផ្ដើមលេង។", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
+
             // FIRST CLICK → COVER + ROLL
             if (!isResultMode)
-            {
-                // Lock betting
-                isBetting = false;
+            {             
                 startRollingAfterCover = true;
 
                 picDice1.Visible = false;
@@ -451,7 +457,7 @@ namespace KlaKlouk
                 lbResultStatus.Text = "ឈ្នះ + $" + net;
                 lbResultStatus.ForeColor = Color.LimeGreen;
 
-                lbCongrat.Text = "ហឹម...ខ្មោចអោយសោះហា៎កុំបានចិត្តពេក​​ តែតិចទៀតដឹងគ្នាហើយ!";
+                lbCongrat.Text = "ខ្មោចអោយសោះ! កុំបានចិត្តពេកតិចទៀតដឹងគ្នាហើយ!";
                 lbCongrat.ForeColor = Color.LimeGreen;
 
                 PlayRandomSound(winSounds);
@@ -461,7 +467,7 @@ namespace KlaKlouk
                 lbResultStatus.Text = "ចាញ់ - $" + Math.Abs(net);
                 lbResultStatus.ForeColor = Color.Red;
 
-                lbCongrat.Text = "ចាក់នៅស្ទើរណាស់ប្អូនខំប្រើងបន្តទៀតក្រែងអស់ប្លង់ដី!";
+                lbCongrat.Text = "ចាក់នៅស្ទើរណាស់ប្អូនខំប្រឹងបន្តទៀតក្រែងអស់ប្លង់ដី!";
                 lbCongrat.ForeColor = Color.Red;
 
                 PlayRandomSound(loseSounds);
@@ -471,7 +477,7 @@ namespace KlaKlouk
                 lbResultStatus.Text = "រួចដើម";
                 lbResultStatus.ForeColor = Color.Yellow;
 
-                lbCongrat.Text = "Draw. No Win No Lose.";
+                lbCongrat.Text = "ងាប់ហើយ! ខំចាក់ចង់ងាប់បានរួចតែថ្លៃដើម ព្រះ!!!";
                 lbCongrat.ForeColor = Color.Gold;
 
                 SoundPlayer player = new SoundPlayer(@"Sounds\same_same.wav");
