@@ -360,7 +360,7 @@ namespace KlaKlouk
                     return;
             }
 
-            // FIRST CLICK → COVER + ROLL
+            // First click: cover + start rolling
             if (!isResultMode)
             {             
                 startRollingAfterCover = true;
@@ -379,10 +379,10 @@ namespace KlaKlouk
                 isResultMode = true;
                 isShowingResult = false;
             }
-            // SECOND CLICK → SHOW RESULT + PAYOUT
+            //Second click: uncover + show result + calculate payout
             else
             {
-                diceTimer.Stop();          // stop dice rolling
+                diceTimer.Stop();    
                 coverTimer.Start();        // uncover
 
                 btnResult.Text = "ចាប់ផ្ដើមលេង";

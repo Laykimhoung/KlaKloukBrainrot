@@ -389,9 +389,9 @@
             this.lbTotal.ForeColor = System.Drawing.Color.White;
             this.lbTotal.Location = new System.Drawing.Point(857, 23);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(116, 33);
+            this.lbTotal.Size = new System.Drawing.Size(161, 33);
             this.lbTotal.TabIndex = 13;
-            this.lbTotal.Text = "ទឹកប្រាក់សរុប:";
+            this.lbTotal.Text = "ទឹកប្រាក់សរុប: $200";
             // 
             // lbLastRoll
             // 
