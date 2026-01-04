@@ -72,6 +72,7 @@
             this.coverTimer = new System.Windows.Forms.Timer(this.components);
             this.coverPlate = new System.Windows.Forms.PictureBox();
             this.lbResultStatus = new System.Windows.Forms.Label();
+            this.lbCongrat = new System.Windows.Forms.Label();
             this.borderBoard.SuspendLayout();
             this.board.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CasinoMan)).BeginInit();
@@ -315,11 +316,11 @@
             // 
             // btnRoll
             // 
-            this.btnRoll.BackColor = System.Drawing.Color.HotPink;
+            this.btnRoll.BackColor = System.Drawing.Color.Gold;
             this.btnRoll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRoll.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRoll.ForeColor = System.Drawing.Color.Black;
-            this.btnRoll.Location = new System.Drawing.Point(460, 429);
+            this.btnRoll.Location = new System.Drawing.Point(563, 467);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(97, 36);
             this.btnRoll.TabIndex = 3;
@@ -329,7 +330,7 @@
             // 
             // btnCover
             // 
-            this.btnCover.BackColor = System.Drawing.Color.Red;
+            this.btnCover.BackColor = System.Drawing.Color.Gold;
             this.btnCover.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCover.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCover.ForeColor = System.Drawing.Color.Black;
@@ -343,15 +344,15 @@
             // 
             // btnResult
             // 
-            this.btnResult.BackColor = System.Drawing.Color.Blue;
+            this.btnResult.BackColor = System.Drawing.Color.Lime;
             this.btnResult.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnResult.Font = new System.Drawing.Font("Khmer OS Siemreap", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResult.ForeColor = System.Drawing.Color.White;
-            this.btnResult.Location = new System.Drawing.Point(563, 467);
+            this.btnResult.ForeColor = System.Drawing.Color.Black;
+            this.btnResult.Location = new System.Drawing.Point(439, 425);
             this.btnResult.Name = "btnResult";
-            this.btnResult.Size = new System.Drawing.Size(97, 36);
+            this.btnResult.Size = new System.Drawing.Size(142, 36);
             this.btnResult.TabIndex = 9;
-            this.btnResult.Text = "លទ្ធផល";
+            this.btnResult.Text = "ចាប់ផ្ដើមលេង";
             this.btnResult.UseVisualStyleBackColor = false;
             this.btnResult.Click += new System.EventHandler(this.btnResult_Click);
             // 
@@ -560,19 +561,32 @@
             // 
             this.lbResultStatus.AutoSize = true;
             this.lbResultStatus.BackColor = System.Drawing.Color.Black;
-            this.lbResultStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResultStatus.Font = new System.Drawing.Font("Khmer OS Siemreap", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResultStatus.ForeColor = System.Drawing.Color.White;
-            this.lbResultStatus.Location = new System.Drawing.Point(687, 509);
+            this.lbResultStatus.Location = new System.Drawing.Point(682, 504);
             this.lbResultStatus.Name = "lbResultStatus";
-            this.lbResultStatus.Size = new System.Drawing.Size(58, 29);
+            this.lbResultStatus.Size = new System.Drawing.Size(61, 41);
             this.lbResultStatus.TabIndex = 23;
             this.lbResultStatus.Text = "W/L";
+            // 
+            // lbCongrat
+            // 
+            this.lbCongrat.AutoSize = true;
+            this.lbCongrat.BackColor = System.Drawing.Color.Black;
+            this.lbCongrat.Font = new System.Drawing.Font("Khmer OS Bokor", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCongrat.ForeColor = System.Drawing.Color.White;
+            this.lbCongrat.Location = new System.Drawing.Point(193, 333);
+            this.lbCongrat.Name = "lbCongrat";
+            this.lbCongrat.Size = new System.Drawing.Size(236, 67);
+            this.lbCongrat.TabIndex = 24;
+            this.lbCongrat.Text = "Congratulation";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 529);
+            this.Controls.Add(this.lbCongrat);
             this.Controls.Add(this.lbResultStatus);
             this.Controls.Add(this.picMoney100);
             this.Controls.Add(this.picMoney20);
@@ -672,6 +686,7 @@
         private System.Windows.Forms.Label lbBetBomb;
         private System.Windows.Forms.Label lbBetTung;
         private System.Windows.Forms.Label lbResultStatus;
+        private System.Windows.Forms.Label lbCongrat;
     }
 }
 

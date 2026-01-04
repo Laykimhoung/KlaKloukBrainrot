@@ -105,6 +105,9 @@ namespace KlaKlouk
             lbResultStatus.Parent = backGround;
             lbResultStatus.BackColor = Color.Transparent;
 
+            lbCongrat.Parent = backGround;  
+            lbCongrat.BackColor = Color.Transparent;
+
             coverPlate.Parent = backGround;
             coverPlate.BackColor = Color.Transparent;
 
@@ -188,8 +191,9 @@ namespace KlaKlouk
         {
             RollDice();
             ShowDice();
-        }  
-        
+        }
+
+        bool isCovering = false;
         private void btnCover_Click(object sender, EventArgs e)
         {
             coverPlate.BringToFront(); 
@@ -210,15 +214,12 @@ namespace KlaKlouk
 
             coverTimer.Start();
         }
-
-        bool isCovering = false;
         private void coverTimer_Tick(object sender, EventArgs e)
         {
             int speed = 12;
 
             if (!isCovering)
             {
-                // COVER DOWN
                 coverPlate.Top += speed;
 
                 if (coverPlate.Top >= resizer.TargetCoverY)
@@ -236,7 +237,6 @@ namespace KlaKlouk
             }
             else
             {
-                // COVER UP
                 coverPlate.Top -= speed;
 
                 if (coverPlate.Top <= resizer.OriginalCoverY)
@@ -244,8 +244,7 @@ namespace KlaKlouk
                     coverPlate.Top = resizer.OriginalCoverY;
                     coverTimer.Stop();
                     isCovering = false;
-
-                    // Show dice again
+               
                     picDice1.Visible = true;
                     picDice2.Visible = true;
                     picDice3.Visible = true;
@@ -264,12 +263,11 @@ namespace KlaKlouk
         int selectedBetAmount = 0;
         bool isBetting = false;
         Dictionary<KlaKloukFaces, int> bets = new Dictionary<KlaKloukFaces, int>();
-
         private void btnCashIn_Click(object sender, EventArgs e)
         {
-            isBetting = true;
-            selectedBetAmount = 0;
-            MessageBox.Show("Choose money, then click a face to bet.");
+                isBetting = true;
+                selectedBetAmount = 0;
+                btnCashIn.Text = "សូមរើសទឹកប្រាក់";
         }
 
         private void picMoney1_Click(object sender, EventArgs e)
@@ -322,7 +320,7 @@ namespace KlaKlouk
             bets[face] += selectedBetAmount;
 
             UpdateBetLabels();
-            lbTotal.Text = "Balance: $" + balance;
+            lbTotal.Text = "ទឹកប្រាក់សរុប: $" + balance;
         }
         void UpdateBetLabels()
         {
@@ -345,10 +343,10 @@ namespace KlaKlouk
             isBetting = false;
 
             UpdateBetLabels();
-            lbTotal.Text = "Balance: $" + balance;
+            lbTotal.Text = "ទឹកប្រាក់សរុប: $" + balance;
         }
 
-        bool isResultMode = false;   // controls blue button state
+        bool isResultMode = false;
         bool isShowingResult = false;
         bool startRollingAfterCover = false;
 
@@ -381,8 +379,8 @@ namespace KlaKlouk
                 diceTimer.Stop();          // stop dice rolling
                 coverTimer.Start();        // uncover
 
-                btnResult.Text = "លទ្ធផល";
-                btnResult.BackColor = Color.Blue;
+                btnResult.Text = "ចាប់ផ្ដើមលេង";
+                btnResult.BackColor = Color.Lime;
 
                 isResultMode = false;
                 isShowingResult = true;
@@ -398,13 +396,14 @@ namespace KlaKlouk
             foreach (var d in dice)
                 counts[d]++;
 
-            int totalBet = 0;
+            int totalSpend = 0;
             int totalReturn = 0;
 
             foreach (var face in bets.Keys.ToList())
             {
                 int bet = bets[face];
                 int times = counts[face];
+                totalSpend += bet;
 
                 if (bet > 0 && times > 0)
                 {
@@ -418,27 +417,65 @@ namespace KlaKlouk
             }
 
             UpdateBetLabels();
-            lbTotal.Text = "Balance: $" + balance;
-            ShowWinLose(totalBet, totalReturn);
+            lbTotal.Text = "ទឹកប្រាក់សរុប: $" + balance;
+            ShowWinLose(totalSpend, totalReturn);
         }
-        void ShowWinLose(int totalBet, int totalReturn)
+
+        Random soundRnd = new Random();
+        string[] winSounds =
         {
-            int net = totalReturn - totalBet;
+            @"Sounds\mission.wav",
+            @"Sounds\happy_happy.wav",
+            @"Sounds\boyahh.wav"
+        };
+
+        string[] loseSounds =
+        {
+            @"Sounds\cat_laugh.wav",
+            @"Sounds\ouii_ouii.wav",
+            @"Sounds\keWinKonJanh.wav"
+        };
+        void PlayRandomSound(string[] sounds)
+        {
+            int index = soundRnd.Next(sounds.Length);
+            SoundPlayer player = new SoundPlayer(sounds[index]);
+            player.Play();
+        }
+
+        void ShowWinLose(int totalSpend, int totalReturn)
+        {
+            int net = totalReturn - totalSpend;
 
             if (net > 0)
             {
-                lbResultStatus.Text = "WIN + $" + net;
+                lbResultStatus.Text = "ឈ្នះ + $" + net;
                 lbResultStatus.ForeColor = Color.LimeGreen;
+
+                lbCongrat.Text = "ហឹម...ខ្មោចអោយសោះហា៎កុំបានចិត្តពេក​​ តែតិចទៀតដឹងគ្នាហើយ!";
+                lbCongrat.ForeColor = Color.LimeGreen;
+
+                PlayRandomSound(winSounds);
             }
             else if (net < 0)
             {
-                lbResultStatus.Text = "LOSE - $" + Math.Abs(net);
+                lbResultStatus.Text = "ចាញ់ - $" + Math.Abs(net);
                 lbResultStatus.ForeColor = Color.Red;
+
+                lbCongrat.Text = "ចាក់នៅស្ទើរណាស់ប្អូនខំប្រើងបន្តទៀតក្រែងអស់ប្លង់ដី!";
+                lbCongrat.ForeColor = Color.Red;
+
+                PlayRandomSound(loseSounds);
             }
             else
             {
-                lbResultStatus.Text = "DRAW";
+                lbResultStatus.Text = "រួចដើម";
                 lbResultStatus.ForeColor = Color.Yellow;
+
+                lbCongrat.Text = "Draw. No Win No Lose.";
+                lbCongrat.ForeColor = Color.Gold;
+
+                SoundPlayer player = new SoundPlayer(@"Sounds\same_same.wav");
+                player.Play();
             }
         }     
     }
